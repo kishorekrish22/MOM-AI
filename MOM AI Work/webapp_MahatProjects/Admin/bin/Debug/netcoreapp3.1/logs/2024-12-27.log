@@ -1,0 +1,13 @@
+2024-12-27 15:35:48.7686|ERROR|Admin.Controllers.usersController|Login|An exception occurred in - users / Login, Error Message : , Stack Trace:    at System.Net.Http.ConnectHelper.EstablishSslConnectionAsyncCore(Stream stream, SslClientAuthenticationOptions sslOptions, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean allowHttp2, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttpConnectionAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.FinishSendAsyncBuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at ApiClient.Post_ApiValuesGetString[T](HttpClient client, String requestUri, T value) in D:\MOM AI Work\webapp_MahatProjects\Admin\ApiClient.cs:line 43
+   at Admin.Controllers.usersController.Login(userloginModel model) in D:\MOM AI Work\webapp_MahatProjects\Admin\Controllers\usersController.cs:line 952|FinishHandshake at offset 266 in file:line:column <filename unknown>:0:0
+ProtectedInvokeCallback at offset 187 in file:line:column <filename unknown>:0:0
+Complete at offset 120 in file:line:column <filename unknown>:0:0
+

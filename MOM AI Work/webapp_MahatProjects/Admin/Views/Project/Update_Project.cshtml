@@ -1,0 +1,519 @@
+
+			<!-- This code generated from staging Powered by Mahat, Source Machine : stg , Build Number : #2024-07-004 (Updated on 07/07/2024 22:07) on 12/26/2024 10:31:58 -->
+			@using Microsoft.AspNetCore.Http
+			@inject IHttpContextAccessor HttpContextAccessor
+            @using Admin;
+			@model MahatProjects.Models.ProjectModel
+			@{
+			ViewData["Title"] = @Resource.updateproject;
+
+			Layout = "~/Views/Shared/_Layout.cshtml";
+			
+			}
+
+			@using(Html.BeginForm("Update_Project", "Project", FormMethod.Post, new { enctype="multipart/form-data", @id = "formId"}))
+			{
+
+			<div class="card card-block contCard"><!--Form_Main_Card-->
+				<div class="mobileHeader"><!--form_card_header-->
+					<div class="row">
+						<div class="col-sm-12 col-xs-12">
+							<h4 class="formHdr">@Resource.updateproject</h4>
+						</div>
+					</div>
+				</div><!--form_card_header-->
+				<!--form_error_display-->
+				@if(ViewData["message"] != null)
+				{
+				<div class="row">
+				<div class="col-sm-12 col-xs-12">
+				<div class="alert alert-danger alert-dismissible ">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">x</span>
+				</button>
+				Info :  @ViewData["message"]
+				</div>
+				</div>
+				</div>
+				}
+				
+				
+				 
+				
+				<!--form_error_display-->
+				<div class=""><!--form_inner_card-->
+					<div class="card-block"><!--form_inner_card_block-->
+					    @Html.HiddenFor(m => m.id)
+                            
+						 
+
+						
+						<div class="row"><!--field_container_row-->
+							<!--fieldsStartsHere-->
+						       		
+								<div class="col-sm-3 col-xs-12 p-2 project_name_craftmyapp_container">
+						<div>
+							<div class="form-group" > 
+								<label>@Resource.project_project_name</label>
+                                @Html.TextBoxFor(m => m.project_name, new {@type="text",@maxlength="128", @class = "form-control form-control-lg mahat_transliterate " })
+
+							     @Html.ValidationMessageFor(model => model.project_name)
+							</div>
+						</div>
+					</div>
+<div class="col-sm-12 col-xs-12 p-2 description_craftmyapp_container">
+								<div>
+									<div class="form-group form-group--float-above my-3" > 
+										<label>@Resource.project_description</label>
+										@Html.TextAreaFor(m => m.description, new {@minlength="0",@maxlength="256", @class = "form-control form-control-lg mahat_transliterate " })
+
+										<i class="form-group__bar" ></i>
+									</div>
+									@Html.ValidationMessageFor(model => model.description)
+									<label id="description-error" class="help-block" style="display: none" for="description"></label>
+								</div>
+							</div>
+<div class="col-sm-3 col-xs-12 p-2 handled_by_craftmyapp_container">
+						<div>
+							<div class="form-group" > 
+								<label>@Resource.project_handled_by</label>
+                                @Html.TextBoxFor(m => m.handled_by, new {@type="text",@maxlength="128", @class = "form-control form-control-lg mahat_transliterate " })
+
+							     @Html.ValidationMessageFor(model => model.handled_by)
+							</div>
+						</div>
+					</div>
+<div class="col-sm-3 col-xs-12 p-2 interaction_date_craftmyapp_container">
+									<div>
+										<div class="form-group form-group--float-above my-2" > 
+											<label>@Resource.project_interaction_date</label>
+											@Html.TextBoxFor(m => m.interaction_date, "{0:dd/MM/yyyy}", new {@placeholder="dd/mm/yyyy" ,@type="text", @autocomplete="off", @class = "form-control form-control-lg " })
+
+											<i class="form-group__bar" ></i>
+										</div>
+										@Html.ValidationMessageFor(model => model.interaction_date)
+										<label id="interaction_date-error" class="help-block" style="display: none" for="interaction_date"></label>
+									</div>
+								</div>
+<div class="col-sm-3 col-xs-12 p-2 video_upload_craftmyapp_container list_card_section list_card_tablet">
+                                            <div>
+                                                <label>@Resource.project_video_upload</label>
+                                                <div class="form-group form-group--float-above my-3">
+                                                    <div class="input-file">
+                                                        <input type="hidden"  id="video_upload_existing" name="video_upload_existing">
+                                                        <input type="file" multiple accept="video/*"  id="video_upload" name="video_upload" class="attachments">
+                                                        <label for="video_upload">Browse</label>
+                                                        <span class="video_uploadfilebtn filebtn"></span>
+                                                        <div id="attachmentDisp" href="" >
+                                                            <span id = "video_uploadshowFiles" class="btn-sm btn-default showFiles" data-toggle="modal" data-target="#video_uploadModalotherdocuments"></span>
+                                                        </div>
+                                                    </div>
+                                                    <!--uploaded files-->
+                                                    <!-- Modal content-->
+                                                    <div class="modal-content uploaded_files" id="video_uploadModalotherdocuments">
+                                                        <div class="modal-header">
+                                                            <h4 class="modal-title"><img src = "~/images/upload-file.png" /><span>Uploaded Files</span></h4>
+                                                            <button type = "button" class="close" data-dismiss="modal">&times;</button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div id = "video_uploadAttachedFiles">
+                                                                <table id = "video_uploadfilesTab" class="table table-striped"></table>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type = "button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                         </div>
+<div class="col-sm-12 col-xs-12 p-2 transcript_craftmyapp_container">
+								<div>
+									<div class="form-group form-group--float-above my-3" > 
+										<label>@Resource.project_transcript</label>
+										@Html.TextAreaFor(m => m.transcript, new {@minlength="0",@maxlength="6000", @class = "form-control form-control-lg mahat_transliterate " })
+
+										<i class="form-group__bar" ></i>
+									</div>
+									@Html.ValidationMessageFor(model => model.transcript)
+									<label id="transcript-error" class="help-block" style="display: none" for="transcript"></label>
+								</div>
+							</div>
+
+
+							<!--fieldsEndsHere-->	
+						</div><!--field_container_row-->
+
+
+						<div class="card-block"><!--form_button_card_block-->
+							<button type="button" onclick="window.history.back()"  class="btn btn-secondary cma_cancel_button waves-effect">@Resource.back</button>
+							<button type="button" id="btnSubmit" class="btn cma_primary_button  cma_save_button waves-effect pull-right">@Resource.updateproject</button>
+						</div><!--form_button_card_block-->
+
+
+					</div><!--form_inner_card_block-->
+				</div><!--form_inner_card-->
+			</div><!--Form_Main_Card-->
+
+			}<!--EndFORM-->
+
+
+			
+			 <!--from_cma_script-->
+			 <script type="text/javascript">
+				$(document).ready(function () {
+
+
+				var Actions=getAutho("Project","edit")
+				if(Actions == undefined){
+				window.location = "@Url.Action("RoleAuthorizationFailed", "users")"
+				}
+
+
+				});
+				</script>
+			
+			<link href="~/components/xdsoft_datetimepicker/jquery.datetimepicker.css" rel="stylesheet" />
+<script src="~/components/xdsoft_datetimepicker/php-date-formatter.min.js"></script>
+<script src="~/components/xdsoft_datetimepicker/jquery.datetimepicker.js"></script>
+<script>
+$(document).ready(function () {
+	$('#interaction_date').datetimepicker({
+		 timepicker: false,
+		 format: "d/m/Y",
+		 formatDate: "d/m/Y"
+});
+
+})
+</script>
+
+<script>
+	var video_uploaduploaded_attachments=[];
+	 
+</script>
+    @if (Model != null)
+    {
+        if(Model.video_upload != null && Model.video_upload.ToString() != "")
+        {
+        <script>
+             video_uploaduploaded_attachments= "@Model.video_upload".split('|').filter(Boolean);
+			$("#video_upload_existing").val("@Model.video_upload")
+        </script>
+        }
+    }
+ 
+<script>
+    
+   
+    var fileInputvideo_upload = document.getElementById('video_upload');
+    var filesTabvideo_upload = $('#video_uploadfilesTab');
+    var uploadernamevideo_upload = document.querySelector(".video_uploadfilebtn");
+    var video_uploadselectedFiles = [];
+    var video_uploadexistingFiles = video_uploaduploaded_attachments;
+    renderExistingFileListOfvideo_upload();
+    updateFileCountofvideo_upload();
+	
+
+	fileInputvideo_upload.addEventListener('change', function (e) {
+		var files = e.target.files;
+
+		// Append the newly selected files to the existing video_uploadselectedFiles array
+		video_uploadselectedFiles.push(...files);
+
+
+		// Render the file list
+		renderFileListofvideo_upload();
+
+		 
+
+		// Update the file count
+		updateFileCountofvideo_upload();
+	});
+	function renderExistingFileListOfvideo_upload() {
+	 	// Remove all <tr> elements with the class name existingFile
+		filesTabvideo_upload.find('tr.existingFile').remove();
+
+
+		// Render the updated file list
+		for (var i = 0; i < video_uploadexistingFiles.length; i++) {
+			var file = video_uploadexistingFiles[i];
+
+			var fileName = file;
+			var icon_Class = getIconClass(fileName);
+              var filedisplayname = fileName.substring(fileName.lastIndexOf('/') + 1);
+			                                                                     
+			var row = $('<tr>').attr('id', 'filevideo_upload' + i).attr('class', 'existingFile');
+			row.append($('<td>').addClass('ico_lst').html('<img src="' + vBaseurl + '' + icon_Class + '"/>'));
+            row.append($('<td>').addClass('cont_lst').html('<a href="' + fileName + '" target="_blank" id="' + fileName + '" class="filedisplay" title="' + fileName + '"><span>' + filedisplayname + '</span></a>'));
+			row.append($('<td>').addClass('delete_lst').html('<span class="btn btn-sm deleteAttach delexistingvideo_upload' + i + '"><img src="' + vBaseurl + '/images/delete.png"></span>'));
+
+			filesTabvideo_upload.append(row);
+
+			// Bind the click event for the delete button using a function
+			bindDeleteExistingEventvideo_upload(i);
+		}
+	}
+
+	function renderFileListofvideo_upload() {
+		// Remove all <tr> elements with the class name newFile
+		filesTabvideo_upload.find('tr.newFile').remove();
+
+		// Render the updated file list
+		for (var i = 0; i < video_uploadselectedFiles.length; i++) {
+			var file = video_uploadselectedFiles[i];
+
+			var fileName = file.name;
+			var icon_Class = getIconClass(fileName);
+
+			var row = $('<tr>').attr('id', 'filevideo_upload' + i).attr('class', 'newFile');
+			row.append($('<td>').addClass('ico_lst').html('<img src="' + vBaseurl + '' + icon_Class + '"/>'));
+			row.append($('<td>').addClass('cont_lst').html('<a href="' + URL.createObjectURL(file) + '" target="_blank" id="' + fileName + '" class="filedisplay" title="' + fileName + '"><span>' + fileName + '</span></a>'));
+			row.append($('<td>').addClass('delete_lst').html('<span class="btn btn-sm deleteAttach delvideo_upload' + i + '"><img src="' + vBaseurl + '/images/delete.png"></span>'));
+
+			filesTabvideo_upload.append(row);
+
+			// Bind the click event for the delete button using a function
+			bindDeleteEventvideo_upload(i);
+		}
+	}
+
+	function bindDeleteEventvideo_upload(index) {
+		$(".delvideo_upload" + index).click(function () {
+			// Remove the file from the selected files array
+			video_uploadselectedFiles.splice(index, 1);
+
+			// Re-render the file list
+			renderFileListofvideo_upload();
+
+			// Update the file count
+			updateFileCountofvideo_upload();
+		});
+	}
+	function bindDeleteExistingEventvideo_upload(index) {
+		$(".delexistingvideo_upload" + index).click(function () {
+			// Remove the file from the selected files array
+			video_uploadexistingFiles.splice(index, 1);
+			
+			$("#video_upload_existing").val(video_uploadexistingFiles.join('|'))
+			
+			// Re-render the file list
+			renderExistingFileListOfvideo_upload();
+
+			// Update the file count
+			updateFileCountofvideo_upload();
+		});
+	}
+	function updateFileCountofvideo_upload() {
+		// Display the file count
+		uploadernamevideo_upload.innerHTML = video_uploadselectedFiles.length + video_uploadexistingFiles.length + ' files selected';
+		 
+	}
+
+
+
+</script>
+
+			
+			
+			
+			
+			<script>
+            
+			
+			
+			</script>
+			
+  
+ 
+                            <script>
+                            var posturl='';
+                            </script>
+
+                             @if (Model == null)
+                             {
+	                             <script>
+                                posturl = '@Url.Action("Add_Project")';
+	                            </script>
+                            }else{
+	   
+	                                <script>
+                                                   posturl = '@Url.Action("Update_Project")';
+			 
+						                                  </script>    			              
+                              
+	 
+							                            ViewData["Title"] = @Resource.updateproject;
+						                                 <script>
+                   
+					                                 $("#btnSubmit").html("@Resource.updateproject")
+						                                  </script>    
+ 
+ 
+                            }
+
+<script>
+$(document).ready(function () {
+	
+	
+           
+                $.validator.addMethod("invalidphone", function (value, element) {
+                if (value == 'invalid') {
+                return false;
+                }
+                return true;
+                }, "Please enter valid value");
+
+                                        $('#formId').validate({
+                                        ignore: ":hidden:not(.invalidphone)",
+                                        highlight: function(element) {
+                                        $(element).closest('.form-group').addClass('has-error');
+                                        $(element).closest('.form-group').removeClass('has-success');
+                                        $(element).addClass('form-control-error');
+                                        $(element).removeClass('form-control-success');
+                                        },
+                                        unhighlight: function(element) {
+                                        $(element).closest('.form-group').removeClass('has-error');
+                                        $(element).closest('.form-group').addClass('has-success');
+                                        $(element).addClass('form-control-success');
+                                        $(element).removeClass('form-control-error');
+                                        },
+                                        errorElement: 'span',
+                                        errorClass: 'help-block',
+                                        errorPlacement: function (error, element) {
+                                                    if (element.hasClass("invalidphone")) {
+                                                        error.addClass("invalidphoneerror");
+                                                        error.insertAfter(element);
+                                                    } else {
+                                                        error.insertAfter(element);
+                                                    }
+                                                }
+                                        });
+ 	 
+var validator = $("#formId").validate({ /* settings */ });
+ 
+$("#btnSubmit").click(function(){
+ 
+ 
+ 
+
+ 
+ 
+
+if ($("#formId").valid()){
+ $(".page-loader").show()
+ 
+ var form = $('#formId')[0];
+ var formdata = new FormData(form);
+
+ 
+
+ 
+ formdata.delete('video_upload');
+                     for (var i = 0; i < video_uploadselectedFiles.length; i++) {
+		                     formdata.append('video_upload', video_uploadselectedFiles[i]);
+                        }
+
+ 
+ 
+
+ 
+$.ajax({
+url: posturl,
+type:'POST',
+enctype: 'multipart/form-data',
+processData: false,   
+contentType: false,
+cache: false,
+data: formdata,
+success: function(data) {
+  
+  $(".page-loader").hide();
+ if(data=="Success"){
+ $(".page-loader").hide();
+
+ 	var Actions_=getAutho("Project","list")
+	if(Actions_ !=  undefined)
+	{
+		var list_URL = "@Url.Action("entry.viewname", "Project")"
+		                                                                list_URL = list_URL.replace("entry.viewname", Actions_.actionmethodname);
+		                                                                window.location=list_URL;
+	 
+	}
+   
+ }
+    else {
+                                $(".page-loader").hide();
+                                swal({
+                                    title: "Error !!",
+                                    text: data,
+
+                                    type: "error",
+                                    showCancelButton: false,
+                                    confirmButtonText: "OK",
+                                })
+
+
+                            }
+
+ 
+},
+	error: function(jqXHR, textStatus, errorThrown) {
+	if (JSON.stringify(jqXHR.responseText) == "\"API Authorization failed\"")
+	{
+	swal({
+	title: 'Failed!',
+	text: jqXHR.responseText,
+	type: 'error',
+	buttonsStyling: false,
+	confirmButtonClass: 'btn btn-primary',
+	allowOutsideClick: false
+	}).then(function() {
+	window.location = "@Url.Action("AuthorizationFailed", "users")"
+	}) 
+	}
+	else
+	{
+	swal({
+	title: 'Contact Administrator !',
+	text: jqXHR.responseText,
+	type: 'error',
+	buttonsStyling: false,
+	confirmButtonClass: 'btn btn-primary'
+	}) 
+	}
+	}
+})
+
+
+
+
+}else{
+validator.focusInvalid();
+swal({
+title: 'Validation Failed !',
+text: "Please check your entry",
+type: 'error',
+buttonsStyling: false,
+confirmButtonClass: 'btn btn-primary'
+ })
+}
+})
+})
+
+
+</script>
+
+			
+			
+            
+            
+
+			 
+             
+                
+			 <!--to_cma_script-->
+			
+
+
+
+

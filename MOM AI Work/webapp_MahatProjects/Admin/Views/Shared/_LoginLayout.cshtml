@@ -1,0 +1,103 @@
+
+            <!-- This code generated from staging Powered by Mahat, Source Machine : stg , Build Number : #2024-07-004 (Updated on 07/07/2024 22:07) on 12/26/2024 10:27:24 -->
+             @using Microsoft.AspNetCore.Http
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mahat Projects</title>
+
+    <!-- BEGIN META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="your,keywords">
+    <meta name="description" content="Mahat Projects">
+    <!-- END META -->
+    <!-- BEGIN STYLESHEETS -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300italic,400italic,300,400,500,700,900' rel='stylesheet' type='text/css' />
+
+    <link type="text/css" rel="stylesheet" href="~/css/bootstrap.css?1422823238" />
+
+    <link type="text/css" rel="stylesheet" href="~/css/materialadmin.css?1422823243" />
+
+    <link type="text/css" rel="stylesheet" href="~/css/font-awesome.min.css?1422823239" />
+
+    <link type="text/css" rel="stylesheet" href="~/css/material-design-iconic-font.min.css?1422823240" />
+    <link type="text/css" rel="stylesheet" href="~/css/custom.css" />
+<link type="text/css" rel="stylesheet" href="~/css/custom_changed.css" />
+
+    <!-- END STYLESHEETS -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script type="text/javascript" src="http://www.codecovers.eu/assets/js/modules/materialadmin/libs/utils/html5shiv.js?1422823601"></script>
+      <script type="text/javascript" src="http://www.codecovers.eu/assets/js/modules/materialadmin/libs/utils/respond.min.js?1422823601"></script>
+      <![endif]-->
+  <script src="~/components/jquery/jquery.min.js"></script>
+<link rel="stylesheet" href="~/libs/intl-tel-input-master/build/css/intlTelInput.css">
+<script src="~/libs/intl-tel-input-master/build/js/intlTelInput.min.js"></script>
+<script src="~/libs/intl-tel-input-master/build/js/utils.js"></script>
+    <style>
+        .form-group .login-input .form-control ~/ label span {
+            background: #fdfaf7;
+        }
+    </style>
+  
+    <script src="~/components/jquery/jquery.validate.js"></script>
+    <script src="~/components/jquery/additional-methods.min.js"></script>
+<link type="text/css" rel="stylesheet" href="~/themestyles.css" />
+    <link type="text/css" rel="stylesheet" href="~/appstyles.css" />
+<link rel='shortcut icon' type='image/x-icon' href='~/images/favicon.ico' />
+</head>
+
+
+
+
+
+
+<body class="menubar-hoverable header-fixed bg-white">
+    <!-- BEGIN HEADER-->
+   
+    <!-- END HEADER-->
+    <!-- BEGIN LOGIN SECTION -->
+    <div id="content">
+        <section class="section-account">
+            <div class="img-backdrop"></div>
+            <div class="card contain-sm style-transparent">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3">
+
+                            <div class="card login-card">
+                                <div class="card-head text-center">
+                                <img src="~/images/logo.png" class="brand-holder-img-login" />
+                                </div>
+                               <div class="card-body">
+                                    @RenderBody()
+                                     <p class="build-version">@Configuration.GetSection("settings")["versionnumber"]</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end .col -->
+                    </div>
+                    <!--end .row -->
+                </div>
+                <!--end .card-body -->
+            </div>
+            <!--end .card -->
+        </section>
+    </div>
+    <!-- END LOGIN SECTION -->
+    <!-- BEGIN JAVASCRIPT -->
+  
+    <script src="~/js/bootstrap.min.js"></script>
+    
+
+
+    <!-- END JAVASCRIPT -->
+
+
+
+</body>
+
+</html>

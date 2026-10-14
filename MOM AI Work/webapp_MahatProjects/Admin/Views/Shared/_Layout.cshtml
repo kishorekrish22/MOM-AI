@@ -1,0 +1,1314 @@
+
+<!--This code generated from staging Powered by Mahat, Source Machine : stg , Build Number : #2024-07-004 (Updated on 07/07/2024 22:07) on 12/26/2024 10:27:24-->
+@using Microsoft.AspNetCore.Http
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <title>@ViewBag.Title</title>
+  <!-- BEGIN META -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="your,keywords">
+  <meta name="description" content="@ViewBag.Title">
+  <!-- END META -->
+  <!-- BEGIN STYLESHEETS -->
+ 
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300italic,400italic,300,400,500,700,900' rel='stylesheet' type='text/css' />
+  <link type="text/css" rel="stylesheet" href="~/css/bootstrap.css" />
+  <link type="text/css" rel="stylesheet" href="~/css/materialadmin.css" />
+  <link type="text/css" rel="stylesheet" href="~/css/font-awesome.min.css" />
+  <link type="text/css" rel="stylesheet" href="~/css/material-design-iconic-font.min.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <link type="text/css" rel="stylesheet" href="~/assets/css/theme-default/libs/multi-select/multi-select.css" />
+  
+       <link type="text/css" rel="stylesheet" href="~/assets/css/theme-default/libs/DataTables/jquery.dataTables.css?1423553989" />
+  <link type="text/css" rel="stylesheet" href="~/assets/css/theme-default/libs/DataTables/extensions/dataTables.colVis.css?1423553990" />
+  <link type="text/css" rel="stylesheet" href="~/assets/css/theme-default/libs/DataTables/extensions/dataTables.tableTools.css?1423553990" />
+  <link type="text/css" rel="stylesheet" href="~/css/responsive.dataTables.min.css" />
+<link type="text/css" rel="stylesheet" href="~/css/dataTables.alphabetSearch.css" />
+  <!-- SUPPORTING CONTROL FILES-->
+   <link rel="stylesheet" href="~/components/sweetalert2/sweetalert2.min.css">
+  <!-- END SUPPORTING CONTROL FILES-->
+  <!-- END STYLESHEETS -->
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+	<script type="text/javascript" src="https://www.codecovers.eu/assets/js/modules/materialadmin/libs/utils/html5shiv.js"></script>
+	<script type="text/javascript" src="https://www.codecovers.eu/assets/js/modules/materialadmin/libs/utils/respond.min.js"></script>
+    <![endif]-->
+<script src="~/js/jquery-1.11.2.min.js"></script>
+  <script src="~/js/jquery-migrate-1.2.1.min.js"></script>
+  <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/App.js"></script>
+<script src="~/js/jquery.nanoscroller.min.js"></script>
+  <script src="~/js/AppNavigation.js"></script>
+<link rel="stylesheet" href="~/libs/intl-tel-input-master/build/css/intlTelInput.css">
+<script src="~/libs/intl-tel-input-master/build/js/intlTelInput.min.js"></script>
+<script src="~/libs/intl-tel-input-master/build/js/utils.js"></script>
+<link type="text/css" rel="stylesheet" href="~/css/custom.css" />
+<link type="text/css" rel="stylesheet" href="~/css/custom_changed.css" />
+<link type="text/css" rel="stylesheet" href="~/themestyles.css" />
+<link type="text/css" rel="stylesheet" href="~/appstyles.css" />
+<link rel='shortcut icon' type='image/x-icon' href='~/images/favicon.ico' />
+ <style>
+         .color-palette {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+ <script>
+        document.addEventListener('DOMContentLoaded', function () {
+             addStylesheet(localStorage.getItem('theme'));
+            
+        });
+
+        function addStylesheet(stylesheet) {
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = "@Configuration.GetSection("ApiSettings")["baseURL"]"+`/${stylesheet}.css`;
+            document.head.appendChild(link);
+        }
+
+        // Example function to change the theme dynamically
+        function changeTheme(themeValue) {
+             // Remove existing theme stylesheet
+            const existingStylesheet = document.querySelector('link[href*="'+localStorage.getItem('theme')+'"]');
+            if (existingStylesheet) {
+                existingStylesheet.remove();
+            }
+
+
+            localStorage.setItem('theme', themeValue);
+
+           
+            
+                addStylesheet(themeValue);
+             
+        }
+        function getIconClass(fileName) {
+    const fileExtensionIcons = {
+        ".pdf": "/images/FileImages/upload_pdf.png",
+        ".docx": "/images/FileImages/word_doc.png",
+        ".xlsx": "/mnt/data/excel.png",  // Using the provided image for Excel
+        ".doc": "/images/FileImages/word_doc.png",
+        ".xls": "/mnt/data/excel.png",  // Using the provided image for Excel
+        ".jpg": "/images/FileImages/image_upload.png",
+        ".jpeg": "/images/FileImages/image_upload.png",
+        ".png": "/images/FileImages/image_upload.png",
+        ".gif": "/images/FileImages/image_upload.png",
+        ".bmp": "/images/FileImages/image_upload.png",
+        ".txt": "/images/FileImages/text_file.png",
+        ".rtf": "/images/FileImages/text_file.png",
+        ".html": "/images/FileImages/html_file.png",
+        ".htm": "/images/FileImages/html_file.png",
+        ".csv": "/images/FileImages/csv_file.png",
+        ".ppt": "/images/FileImages/ppt_file.png",
+        ".pptx": "/images/FileImages/ppt_file.png",
+        ".zip": "/images/FileImages/zip_file.png",
+        ".rar": "/images/FileImages/zip_file.png",
+        ".7z": "/images/FileImages/zip_file.png",
+        ".mp3": "/images/FileImages/audio_file.png",
+        ".wav": "/images/FileImages/audio_file.png",
+        ".mp4": "/images/FileImages/video_file.png",
+        ".avi": "/images/FileImages/video_file.png",
+        ".mkv": "/images/FileImages/video_file.png",
+        ".mov": "/images/FileImages/video_file.png",
+        ".flv": "/images/FileImages/video_file.png",
+        ".exe": "/images/FileImages/exe_file.png",
+        ".dll": "/images/FileImages/dll_file.png",
+        ".psd": "/images/FileImages/photoshop_file.png",
+        ".ai": "/images/FileImages/illustrator_file.png",
+        ".indd": "/images/FileImages/indesign_file.png",
+        ".svg": "/images/FileImages/vector_file.png",
+        ".xml": "/images/FileImages/xml_file.png",
+        ".json": "/images/FileImages/json_file.png",
+        ".js": "/images/FileImages/js_file.png",
+        ".css": "/images/FileImages/css_file.png",
+        ".php": "/images/FileImages/php_file.png",
+        ".java": "/images/FileImages/java_file.png",
+        ".py": "/images/FileImages/python_file.png",
+        ".rb": "/images/FileImages/ruby_file.png",
+        ".go": "/images/FileImages/go_file.png",
+        ".ts": "/images/FileImages/typescript_file.png"
+    };
+    
+    var fileExtension = fileName.substr(fileName.lastIndexOf("."));
+    var fileIconClass = fileExtensionIcons[fileExtension.toLowerCase()];
+    return fileIconClass ? fileIconClass : "/images/FileImages/default_file.png";  // Return a default icon if extension is not found
+}
+
+     var view_ico = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><g id="vuesax/linear/eye"><g id="eye"><path id="Vector" d="M12.9833 9.99993C12.9833 11.6499 11.6499 12.9833 9.99993 12.9833C8.34993 12.9833 7.0166 11.6499 7.0166 9.99993C7.0166 8.34993 8.34993 7.0166 9.99993 7.0166C11.6499 7.0166 12.9833 8.34993 12.9833 9.99993Z" stroke="#003370" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path id="Vector_2" d="M10.0001 16.8918C12.9418 16.8918 15.6834 15.1584 17.5918 12.1584C18.3418 10.9834 18.3418 9.00843 17.5918 7.83343C15.6834 4.83343 12.9418 3.1001 10.0001 3.1001C7.05845 3.1001 4.31678 4.83343 2.40845 7.83343C1.65845 9.00843 1.65845 10.9834 2.40845 12.1584C4.31678 15.1584 7.05845 16.8918 10.0001 16.8918Z" stroke="#003370" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></g></g></svg>';
+
+ var edit_ico = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M11.05 3.00002L4.20829 10.2417C3.94996 10.5167 3.69996 11.0584 3.64996 11.4334L3.34162 14.1334C3.23329 15.1084 3.93329 15.775 4.89996 15.6084L7.58329 15.15C7.95829 15.0834 8.48329 14.8084 8.74162 14.525L15.5833 7.28335C16.7666 6.03335 17.3 4.60835 15.4583 2.86668C13.625 1.14168 12.2333 1.75002 11.05 3.00002Z" stroke="#DD8400" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.90845 4.20825C10.2668 6.50825 12.1334 8.26659 14.4501 8.49992" stroke="#DD8400" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M2.5 18.3333H17.5" stroke="#DD8400" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+ var del_ico = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><g id="vuesax/linear/trash"><g id="trash"><path id="Vector" d="M17.5 4.98332C14.725 4.70832 11.9333 4.56665 9.15 4.56665C7.5 4.56665 5.85 4.64998 4.2 4.81665L2.5 4.98332" stroke="#8B0000" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path id="Vector_2" d="M7.08325 4.14175L7.26659 3.05008C7.39992 2.25841 7.49992 1.66675 8.90825 1.66675H11.0916C12.4999 1.66675 12.6083 2.29175 12.7333 3.05841L12.9166 4.14175" stroke="#8B0000" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path id="Vector_3" d="M15.7084 7.6167L15.1667 16.0084C15.0751 17.3167 15.0001 18.3334 12.6751 18.3334H7.32508C5.00008 18.3334 4.92508 17.3167 4.83341 16.0084L4.29175 7.6167" stroke="#8B0000" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path id="Vector_4" d="M8.6084 13.75H11.3834" stroke="#8B0000" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path id="Vector_5" d="M7.91675 10.4167H12.0834" stroke="#8B0000" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></g></g></svg>';
+   
+ var revise_ico = '<svg height="20" width="20" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512.00 512.00" xml:space="preserve" fill="#000000" stroke="#000000" stroke-width="0.00512" transform="matrix(1, 0, 0, 1, 0, 0)rotate(45)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path style="fill:#ebc53d;" d="M415.566,74.014c-9.09,9.09-9.09,23.828,0,32.92c66.535,66.535,66.535,174.797,0,241.334 c-32.233,32.231-75.086,49.982-120.667,49.982s-88.434-17.751-120.667-49.982c-54.706-54.707-64.422-137.619-29.165-202.356 l16.626,83.596c2.204,11.077,11.927,18.741,22.805,18.741c1.505,0,3.032-0.147,4.564-0.452c12.61-2.508,20.797-14.762,18.29-27.371 L180.63,86.071c-0.006-0.033-0.012-0.064-0.02-0.096l-0.008-0.042c-0.017-0.084-0.043-0.161-0.062-0.245 c-0.14-0.669-0.301-1.333-0.5-1.989c-0.07-0.223-0.158-0.436-0.23-0.656c-0.169-0.503-0.34-1.004-0.543-1.496 c-0.124-0.298-0.27-0.582-0.405-0.872c-0.183-0.396-0.36-0.793-0.568-1.179c-0.188-0.352-0.4-0.686-0.605-1.026 c-0.186-0.307-0.36-0.621-0.562-0.922c-0.273-0.408-0.571-0.793-0.869-1.181c-0.164-0.217-0.317-0.441-0.49-0.652 c-0.402-0.489-0.832-0.951-1.269-1.404c-0.093-0.096-0.171-0.2-0.267-0.295c-0.008-0.008-0.017-0.014-0.023-0.022 c-0.548-0.543-1.117-1.061-1.713-1.547c-0.41-0.334-0.836-0.632-1.262-0.934c-0.185-0.13-0.36-0.276-0.548-0.402 c-0.481-0.321-0.978-0.605-1.476-0.886c-0.155-0.088-0.303-0.188-0.461-0.273c-0.464-0.248-0.939-0.461-1.415-0.677 c-0.216-0.098-0.424-0.208-0.642-0.298c-0.408-0.169-0.824-0.307-1.241-0.453c-0.306-0.107-0.608-0.227-0.919-0.321 c-0.332-0.101-0.67-0.174-1.004-0.259c-0.407-0.104-0.809-0.216-1.22-0.298c-0.258-0.051-0.517-0.079-0.776-0.121 c-0.489-0.081-0.981-0.164-1.477-0.214c-0.216-0.02-0.43-0.02-0.644-0.036c-0.535-0.037-1.068-0.076-1.608-0.076 c-0.334,0-0.667,0.031-1.001,0.045c-0.416,0.019-0.83,0.019-1.249,0.061c-0.77,0.073-1.538,0.188-2.3,0.338 c-0.008,0.002-0.016,0.002-0.022,0.003L18.741,94.393c-12.61,2.508-20.797,14.762-18.29,27.371s14.759,20.794,27.371,18.29 l75.62-15.04c-43.984,82.191-31.37,186.931,37.872,256.172c41.025,41.025,95.568,63.618,153.585,63.618 s112.56-22.593,153.585-63.618c84.687-84.687,84.687-222.484,0-307.171C439.394,64.923,424.655,64.923,415.566,74.014z"></path> </g></svg>'
+ 
+     var  str_tenantid =""
+     $(document).ready(function () {
+          if ("@Context.Session.GetString("MahatProjectsshowtenant")"=="N"){
+             $("#tenantid").parent().parent().parent().addClass("tenantSection")
+             $("#tenantid").parent().parent().empty()
+             var tenantid = "@Context.Session.GetString("MahatProjectschoosedtenantid")"
+              str_tenantid = "@Context.Session.GetString("MahatProjectschoosedtenantid")"
+                $(".tenantSection").append("<input type='text' id='tenantid' name='tenantid' value=" + "@Context.Session.GetString("MahatProjectschoosedtenantid")" + " />")
+                $(".tenantSection").hide()
+            
+         } 
+
+             if ("@Context.Session.GetString("module")" == "client" && "@Context.Session.GetString("MahatProjectsshowtenant")"=="N") {
+                $(".tenantSection").empty()
+                var tenantid="@Context.Session.GetString("MahatProjectschoosedtenantid")"
+                str_tenantid = "@Context.Session.GetString("MahatProjectschoosedtenantid")"
+                $(".tenantSection").append("<input type='text' id='tenantid' name='tenantid' value="+"@Context.Session.GetString("MahatProjectschoosedtenantid")"+" />")
+
+
+            }
+
+            if ("@Context.Session.GetString("MahatProjectsshowtenant")"=="Y" && "@Context.Session.GetString("module")" == "client" && "@Context.Session.GetString("natureofbusiness")".replace("Lead","") !=$(".tenant_display").html()) {
+                $("#tenantid").parent().parent().parent().addClass("tenantSection")
+                $("#tenantid").parent().parent().empty()
+                var tenantid = "@Context.Session.GetString("MahatProjectschoosedtenantid")"
+                str_tenantid = "@Context.Session.GetString("MahatProjectschoosedtenantid")"
+                $(".tenantSection").append(" < input type = 'text' id = 'tenantid' name = 'tenantid' value = " + "@Context.Session.GetString("MahatProjectschoosedtenantid")" + " /> ")
+                $(".tenantSection").hide()
+             }
+    })
+            
+            var typeaheadpagesize = @Configuration.GetSection("settings")["typeaheadpagesize"];
+            var vBaseurl = "@Configuration.GetSection("ApiSettings")["baseURL"]"
+            function getUrlVars()
+            {
+                var vars = [], hash;
+                var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+                for(var i = 0; i < hashes.length; i++)
+                {
+                    hash = hashes[i].split('=');
+                    vars.push(hash[0]);
+                    vars[hash[0]] = hash[1];
+                }
+                return vars;
+            }
+            if("@ViewContext.RouteData.Values["controller"].ToString().ToUpper()" != "TENANT"){
+            if("@Context.Session.GetString("MahatProjectsusername")" == null || "@Context.Session.GetString("MahatProjectsusername")"=="") {
+            window.location="@Url.Action("Login", "users")"
+            }
+            }
+
+         if("@ViewContext.RouteData.Values["controller"].ToString().ToUpper()" == "TENANT"){
+				 if("@Context.Session.GetString("MahatProjectsusername")" == null || "@Context.Session.GetString("MahatProjectsusername")"=="") {
+					$(".page-header-menu-section").hide();
+					$(".menubar").hide();
+					$("#base").css('padding-left','0px');
+                    $("#header").css("left","0")
+                }
+			}
+     </script>
+</head>
+
+<body class="menubar-hoverable header-fixed bg-white">
+  <div class="page-loader">
+
+        <div class="page-loader__spinner">
+
+
+            <img height="50px" width="50px" src="~/images/loading.gif" alt="loader">
+
+
+        </div>
+    </div>
+   
+     <header id="header">
+
+      <div class="page-header-box">
+<a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar" href="javascript:void(0);">
+<i class="fa fa-bars"></i>
+</a>
+          <h1>@ViewBag.Title</h1>
+          <div class="page-header-menu-section">
+            <ul class="header-nav header-nav-profile">
+              
+              <li class="dropdown">
+                <a href="javascript:void(0);" class="dropdown-toggle ink-reaction" data-toggle="dropdown" aria-expanded="false">
+                  <img  src="@Context.Session.GetString("MahatProjectsprofilepicture")" alt="">
+                  <span class="profile-info">
+                    @Context.Session.GetString("MahatProjectsusername")
+                    <small>@Context.Session.GetString("MahatProjectsuserrole")</small>
+                  </span>
+                </a>
+                 
+                <ul class="dropdown-menu animation-dock">
+                 <li style="text-align:center;">
+                    <div class="color-palette" style="background-color: #006A2B " onclick="changeTheme('')"></div>
+                    <div class="color-palette" style="background-color: #808080" onclick="changeTheme('grey')"></div>
+                    <div class="color-palette" style="background-color: #ff5733" onclick="changeTheme('orange')"></div>
+                    <div class="color-palette" style="background-color: #3498db" onclick="changeTheme('blue')"></div>
+                    <div class="color-palette" style="background-color: #27ae60" onclick="changeTheme('green')"></div>
+                    <div class="color-palette" style="background-color: #333" onclick="changeTheme('black')"></div>
+                    
+                </li>
+                <li><a href="@Url.Action("UpdateProfile", "users")?id=@Context.Session.GetString("MahatProjectsloginUserID")"><i class="material-icons profile-icon">account_circle</i> My profile</a></li>
+                <li><a href="@Url.Action("ChangePassword", "users")?id=@Context.Session.GetString("MahatProjectsloginUserID")"><i class="material-icons profile-icon">vpn_key</i> Change Password</a></li>
+                <li><a class="craftmyApp_logout_btn" href="@Url.Action("Logout","users")"><i class="material-icons profile-icon icon-logout">power_settings_new</i> Logout</a></li>
+                </ul>
+                    
+                <!--end .dropdown-menu -->
+              </li>
+              <!--end .dropdown -->
+            </ul>
+          </div>
+
+        </div>
+
+ </header>
+   
+  <div id="base">
+     
+    <div id="content">
+
+      <section class="main-content">
+             
+
+         @RenderBody()
+         
+      </section>
+
+    </div>
+   
+    <div id="menubar" class="menubar">
+      <div class="menubar-fixed-panel">
+        <div>
+          <a class="btn btn-icon-toggle btn-default menubar-toggle" data-toggle="menubar" href="javascript:void(0);">
+            <i class="fa fa-bars"></i>
+          </a>
+        </div>
+         
+      </div>
+      <div class="menubar-scroll-panel">
+       
+        <ul id="main-menu" class="gui-controls mainSideMenu">
+          <li>
+            <a href="#" class="logo-item navigatestartupurl">
+              <img src="~/images/logo.png" />
+            </a>
+          </li>
+          
+            
+        </ul>
+       
+
+      </div>
+      
+   
+    </div>
+    
+  
+
+  </div>
+   
+
+<script>
+            if("@ViewContext.RouteData.Values["controller"].ToString().ToUpper()" != "TENANT"){
+            if("@Context.Session.GetString("MahatProjectsusername")" == null || "@Context.Session.GetString("MahatProjectsusername")"=="") {
+            window.location="@Url.Action("Login", "users")"
+            }
+            }
+
+
+            
+         if("@ViewContext.RouteData.Values["controller"].ToString().ToUpper()" == "TENANT"){
+				 if("@Context.Session.GetString("MahatProjectsusername")" == null || "@Context.Session.GetString("MahatProjectsusername")"=="") {
+					$(".page-header-menu-section").hide();
+					$(".menubar").hide();
+					$("#base").css('padding-left','0px');
+                    $("#header").css("left","0")
+                }
+			}
+     </script>
+  <script src="~/js/spin.min.js"></script>
+  <script src="~/js/jquery.autosize.min.js"></script>
+  <script src="~/js/moment.min.js"></script>
+ 
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+ 
+  <script src="~/js/AppOffcanvas.js"></script>
+  <script src="~/js/AppCard.js"></script>
+  <script src="~/js/AppForm.js"></script>
+  <script src="~/js/AppNavSearch.js"></script>
+  <script src="~/js/AppVendor.js"></script>
+ <!-- OLD COMPONENTS -->
+   <script src="~/components/sweetalert2/sweetalert2.min.js"></script>
+  <script src="~/libs/DataTables/jquery.dataTables.min.js"></script>
+ 
+  <script src="~/libs/DataTables/dataTables.responsive.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.7.0/js/dataTables.buttons.min.js"></script>
+  <script src="~/libs/DataTables/buttons.flash.min.js"></script>
+  <script src="~/libs/DataTables/jszip.min.js"></script>
+  <script src="~/libs/DataTables/buttons.html5.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.print.min.js"></script>
+  <script src="~/libs/DataTables/extensions/ColVis/js/dataTables.colVis.min.js "></script>
+<script src="~/libs/DataTables/extensions/TableTools/js/dataTables.tableTools.min.js "></script>
+<script src="~/js/dataTables.alphabetSearch.min.js"></script>
+  <script src="https://cdn.datatables.net/plug-ins/1.13.1/sorting/datetime-moment.js"></script>
+  <script src="https://cdn.datatables.net/fixedcolumns/4.3.0/js/dataTables.fixedColumns.min.js"></script> 
+ 
+  <!-- END OLD COMPONENTS -->
+  <!-- END JAVASCRIPT -->
+
+<script src="~/components/jquery/jquery.validate.js"></script>
+                                    <script src="~/components/jquery/additional-methods.min.js"></script>
+                                    <script src="~/components/autonumeric/autoNumeric.js"></script>
+
+                                    <link rel="stylesheet" href="~/components/Color-Picker-Plugin-jQuery-MiniColors/jquery.minicolors.css">
+                                    <script src="~/components/Color-Picker-Plugin-jQuery-MiniColors/jquery.minicolors.js"></script>
+                                    <script>
+                                    function Automaton_Set_RadionButtonSelectedValue(name, SelectedValue) {
+                                        $('input[name="' + name + '"][value="' + SelectedValue + '"]').attr('checked',true);
+                                        $('input[name="' + name + '"][value="' + SelectedValue + '"]').parent('label').addClass('active');
+                                    
+                                    }
+                                   function ISOtoSelectedFormat(isoDate) {
+                                        if (!isoDate) return ""; // Handle null or undefined
+
+                                        // Check if the input is in the format YYYY-MM-DD
+                                        if (/^\d{4}-\d{2}-\d{2}$/.test(isoDate)) {
+                                            // Split the string into components
+                                            const [year, month, day] = isoDate.split('-').map(Number);
+
+                                            // Construct the Date object in local time
+                                            const date = new Date(year, month - 1, day); // Month is zero-based in JS
+
+                                            // Format the date
+                                            const formattedDate = `${String(date.getDate()).padStart(2, '0')}/${String(date.getMonth() + 1).padStart(2, '0')}/${date.getFullYear()}`;
+
+                                            return formattedDate;
+                                        }
+
+                                        // For other cases, handle it like a regular date/time string
+                                        const date = new Date(isoDate);
+
+                                        if (isNaN(date)) return ""; // Invalid date check
+
+                                        const day = String(date.getDate()).padStart(2, '0');
+                                        const month = String(date.getMonth() + 1).padStart(2, '0');
+                                        const year = date.getFullYear();
+                                        const hours = date.getHours();
+                                        const minutes = date.getMinutes();
+
+                                        // Return with or without time depending on its presence
+                                        return hours || minutes
+                                            ? `${day}/${month}/${year} ${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`
+                                            : `${day}/${month}/${year}`;
+                                    }                     
+  
+                                     function  getSqlDate(dateString) {
+
+                                        if (dateString != "") {
+                                            var str = dateString;
+                                            var res = str.split("/");
+
+
+
+                                            return res[2] + '-' + res[1] + '-' + res[0];
+                                        }
+                                        else {
+                                            return "";
+
+                                        }
+
+                                    }
+                                    function  getSqlDateTime(dateString) {
+
+	                                    if (dateString != "") {
+		                                    var str = dateString.substring(0, 10);
+		                                    var res = str.split("/");
+
+		                                    var time = dateString.substring(10, 16);
+
+		                                    return res[2] + '-' + res[1] + '-' + res[0] +time;
+	                                    }
+	                                    else {
+		                                    return "";
+
+	                                    }
+
+                                    }
+                                     $(document).ready(function() {
+                                      $(window).keydown(function(event){
+                                        if(event.keyCode == 13) {
+                                          event.preventDefault();
+                                          return false;
+                                        }
+                                      });
+                                    });
+                                    $(document).ready(function () {
+                                       
+                                    //$(".btn-secondary").html('Back');
+                                        $('.alert-success').delay(3000).fadeOut(300);
+                                       // $(".select2").select2()
+
+                                        $(".mobileHeader").hide()
+
+                                                                     //$("#btnFilter").html('Apply');
+
+                                        $('#btnFilter').parent().parent().hide();
+                                        $('#btnFilter').parent().prepend('<button id="btnCloseFilter" class="btn btn-secondary btn--icon-text mt-5">Cancel</button>');
+
+                                        $("#btnCloseFilter").click(function(){
+                                            $('#btnFilter').parent().parent().toggle("slow");
+
+                                        })
+
+                                        $("body").click(function(e){
+
+                                            var container = $(".div_filter");
+                                             var btncontainer=$(".automatonShowFilter")
+                                                     if (!container.is(e.target) && container.has(e.target).length === 0)
+                                                    {
+                                                        if (!btncontainer.is(e.target) && btncontainer.has(e.target).length === 0)
+                                                        {
+
+                                                        container.hide();
+                                                        }
+                                                    }
+
+                                        })
+
+                                          $('#btnFilter').parent().parent().addClass("div_filter");
+
+                                          $('.div_filter').find('.col-sm-2').addClass('col-sm-6 col-xs-12').removeClass('col-sm-2')
+                                          $('#btnFilter').parent().addClass('col-sm-12').removeClass('col-sm-6 col-xs-12')
+
+
+                                            $('body').on('click', '.automatonShowFilter', function(a) {
+                                        $('#btnFilter').parent().parent().toggle("slow");
+                                        });
+
+                                       
+
+                                            get_app_menu()
+                                            $('#formId').validate({
+                                                highlight: function(element) {
+                                                    $(element).closest('.form-group').addClass('has-danger');
+                                                    $(element).closest('.form-group').removeClass('has-success');
+                                                    $(element).addClass('form-control-danger');
+                                                    $(element).removeClass('form-control-success');
+                                                },
+                                                unhighlight: function(element) {
+                                                    $(element).closest('.form-group').removeClass('has-danger');
+                                                    $(element).closest('.form-group').addClass('has-success');
+                                                    $(element).addClass('form-control-success');
+                                                    $(element).removeClass('form-control-danger');
+                                                },
+                                                errorElement: 'label',
+                                                errorClass: 'help-block'
+                                            });
+                                    
+
+                                        var validator = $("#formId").validate({ /* settings */ });
+                                            $("#btnSubmit1").click(function(){
+                                                if ($("#formId").valid()){
+                                                        $(".page-loader").show()
+                                                        $("#formId").submit();
+                                                }else{
+                                                    validator.focusInvalid();
+                                                    swal({
+                                                        title: 'Validation !',
+                                                        text: "Please fill Empty Fields",
+                                                        type: 'error',
+                                                        buttonsStyling: false,
+                                                        confirmButtonClass: 'btn btn-primary'
+                                                    })
+                                                }
+                                            })
+
+
+                                        })
+                                        $('form:first *:input[type!=hidden]:first').focus();
+
+                                        $('body').on('click', '.deleteRecordFromTable', function (e) {
+                                            var deleteURL = window.location.origin+($(this).attr("href"))
+
+                                        e.preventDefault(); // <--- prevent form from submitting
+
+                                        swal({
+                                            title: "Are you sure to delete?",
+                                            text: "",
+                                            type: "warning",
+                                            showCancelButton: true,
+                                            confirmButtonColor: '#DD6B55',
+                                            confirmButtonText: 'Yes, I am sure!',
+                                            cancelButtonText: "No, cancel it!",
+                                            closeOnConfirm: false,
+                                            closeOnCancel: false,
+                                            dangerMode: true,
+                                            }).then(function(isConfirm) {
+                                            if (isConfirm) {
+                                                
+                                                window.location=deleteURL
+                                                
+                                            } 
+                                            })
+                                        });
+ $('body').on('click', '.craftmyApp_logout_btn', function (e) {
+                                            var deleteURL = window.location.origin+($(this).attr("href"))
+
+                                        e.preventDefault(); // <--- prevent form from submitting
+
+                                        swal({
+                                            title: "Are you sure to logout?",
+                                            text: "",
+                                            type: "warning",
+                                            showCancelButton: true,
+                                            confirmButtonColor: '#DD6B55',
+                                            confirmButtonText: 'Yes, I am sure!',
+                                            cancelButtonText: "No, cancel it!",
+                                            closeOnConfirm: false,
+                                            closeOnCancel: false,
+                                            dangerMode: true,
+                                            }).then(function(isConfirm) {
+                                            if (isConfirm) {
+                                                
+                                                window.location=deleteURL
+                                                
+                                            } 
+                                            })
+                                        });
+
+ function get_app_menu(){
+          
+
+
+         
+			
+			var a =  eval("@Context.Session.GetString("MahatProjectsmenu_JSON")".replace(/&quot;/g, '"'))
+			 if (typeof a === 'undefined') {
+                return "";  
+            }
+			var lookup = {};
+			var items = eval("@Context.Session.GetString("MahatProjectsmenu_JSON")".replace(/&quot;/g, '"'));
+			var result = [];
+            var result_icon = [];
+            var subsystem="";
+			for (var item, i = 0; item = items[i++];) {
+			  var name = item.parentnode;
+  				var icon_of_it= item.parentdisplayicon;
+                subsystem=item.subsystem;
+
+			  // if(item.SubSystem=="{SubSystem}")
+				//{
+
+						if (!(name in lookup) && name!=null) {
+							lookup[name] = 1;
+							result.push(name);
+                            result_icon.push(icon_of_it);
+						}
+				//}
+			}
+			
+			//console.log(result)
+			
+			 var submenu =[];
+			 var lookupSubmenu = {};
+				 
+				
+				var selectedGroupID="";
+                var subsystem="";
+				for (var menu = 0; menu < result.length; menu++) {
+
+					
+				 
+					 var groupID = result[menu].replace(/[^A-Z0-9]/ig, "_");
+				
+						var groupOfMenu='<li class="liGroupTop dropdown '+groupID+'">'+
+						 '<a class="dropdowns" href="" data-toggle="dropdown"><i  class="'+result_icon[menu]+'"></i> '+ result[menu] +'</a>'+
+							'<div class="dropdown-menu">';
+
+                          var groupOfMenu_side='<li  class="has-dropdown '+groupID+'_">'+
+							'<a  data-toggle="tooltip" data-placement="right" title="'+result[menu]+'" href="#" class="'+groupID+'_"><i  class="'+result_icon[menu]+'"></i><span class="title">'+result[menu]+'</span></a>'+
+
+                            '<div class="menu-dropdown"><ul>';
+						
+
+                            '<div class="menu-dropdown"><ul>';
+								 
+								 
+								 
+				
+					 //console.log(result[menu]);
+					
+							for (var item, i = 0; item = items[i++];) {
+							  var name = item.projectelementname;
+                                subsystem=item.subsystem;
+
+								if(result[menu]==item.parentnode)
+								  {
+										if (!(name in lookupSubmenu)) {
+												lookupSubmenu[name] = 1;
+										  
+										 
+											 
+											 
+											 
+											 var URL = "@Url.Action("Index", "item.controllername")"
+                                             URL = URL.replace("Index", item.actionmethodname);
+											 URL = URL.replace("item.controllername", item.controllername);
+											 
+											  
+
+												var controllernameClass = item.controllername.toUpperCase();
+												 var controllerActionName ="";
+
+
+                                                    
+
+
+           var profileMenu = 'User Management'
+		profileMenu=profileMenu.replace(/[^A-Z0-9]/ig,"_");
+												 
+												if(name=="Update Profile")
+												{
+												   URL = "@Url.Action("UpdateProfile", "users")?id=@Context.Session.GetString("MahatProjectsloginUserID")"
+												   controllerActionName="UPDATEPROFILE"
+												}
+
+
+                                                if(name=="Change Password")
+												{
+												   URL = "@Url.Action("ChangePassword", "users")?id=@Context.Session.GetString("MahatProjectsloginUserID")"
+												   controllerActionName="CHANGEPASSWORD"
+												}
+												 
+												if(name=="Manage Users"  && "@Context.Session.GetString("module")"=="admin"){
+													 URL = "@Url.Action("IndexPlatform", "users")"
+													 controllerActionName="INDEXPLATFORM"
+													   
+												 }
+
+                                                
+												 
+													if("@ViewContext.RouteData.Values["action"].ToString().ToUpper()"=="CHANGEPASSWORD" || "@ViewContext.RouteData.Values["action"].ToString().ToUpper()"=="UPDATEPROFILE" || "@ViewContext.RouteData.Values["action"].ToString().ToUpper()"=="INDEXPLATFORM" || "@ViewContext.RouteData.Values["action"].ToString().ToUpper()"=="CREATEPLATFORM" || "@ViewContext.RouteData.Values["action"].ToString().ToUpper()"=="EDITPLATFORM")
+													{
+															selectedGroupID=profileMenu
+													}
+													
+													
+													if(selectedGroupID==profileMenu)
+													{
+														 
+													 
+													   if("@ViewContext.RouteData.Values["action"].ToString().ToUpper()"==controllerActionName)
+														 {
+															
+																groupOfMenu+='<a href="' + URL + '" class="dropdown-item active">'+name+'</a>' 
+																groupOfMenu_side+='<li><a href="' + URL + '" class="active">'+name+'</a></li>'  
+														}
+														else
+														{
+															groupOfMenu+='<a href="' + URL + '" class="dropdown-item">'+name+'</a>' 
+                                                            groupOfMenu_side+='<li><a href="' + URL + '" class="">'+name+'</a></li>'
+														}
+														
+														
+													}else{
+													 
+													 
+															 if("@ViewContext.RouteData.Values["controller"].ToString().ToUpper()"==controllernameClass)
+															 {
+																 
+															   if(groupID !=profileMenu)
+															   {
+																groupOfMenu+='<a href="' + URL + '" class="dropdown-item active">'+name+'</a>' 
+                                                                groupOfMenu_side+='<li><a href="' + URL + '" class="active">'+name+'</a></li>'
+																
+																selectedGroupID=groupID
+																
+																}
+																else
+																{
+																	groupOfMenu+='<a href="' + URL + '" class="dropdown-item">'+name+'</a>' 
+                                                                    groupOfMenu_side+='<li><a href="' + URL + '" class="">'+name+'</a></li>'
+																
+																
+																}
+																
+															 
+																 
+															}
+															else
+															{
+																groupOfMenu+='<a href="' + URL + '" class="dropdown-item">'+name+'</a>' 
+                                                                groupOfMenu_side+='<li><a href="' + URL + '">'+name+'</a></li>'
+															}
+															
+															
+															if("@ViewContext.RouteData.Values["controller"].ToString().ToUpper()"=="LOOKUPS")
+															{
+																selectedGroupID='liSettingsTop'
+															
+															}
+													
+													
+													}
+													 
+													
+													 
+											
+											 
+											 
+											 
+											  submenu.push(name);
+										  }
+								
+								}
+							}
+							
+							groupOfMenu+='</div>'+
+									'</li>'
+
+                           groupOfMenu_side+='</ul></div>'+
+											  '</li>'
+									
+									
+							$('.mainTopMenu').append(groupOfMenu)
+                            $('.mainSideMenu').append(groupOfMenu_side)
+							
+							
+						   
+
+				 }
+				   if(selectedGroupID !="")
+					{
+					   if (getUrlVars()["businesstype"] == "Agency") {
+                           selectedGroupID = "Manage_Agency"
+                       }
+
+					   $("."+selectedGroupID).addClass("active")
+
+                       $("."+selectedGroupID+"_").addClass("active")
+
+
+                        $("."+selectedGroupID+"_").addClass("cma_active")
+
+
+                            $('.mainSideMenu li').each(function() {
+                            if($(this).attr("class") !=undefined){
+	                            if($(this).attr("class").includes('cma_active')){
+		                            $(this).prev().addClass("next-menu-active");
+		
+		                            $(this).next().addClass("prev-menu-active");
+		                             if($(this).next().attr("class")==undefined){
+			                            $(".mainSideMenu").append("<li class='has-dropdown prev-menu-active'><a href='#'></a></li>");
+		                             }
+		 
+	                            }
+                            }
+                            })
+                      
+					 
+					}
+				   //$('.mainTopMenu').append('<li><a class="craftmyApp_logout_btn" href="@Url.Action("Logout","users")"><i class="fas fa-sign-out-alt"></i></a></li>')
+                   //$('.mainSideMenu').append('<li class="craftmyApplogoutbtn"><a class="craftmyApp_logout_btn" href="@Url.Action("Logout","users")"><i class="fas fa-sign-out-alt"></i></li>')
+                $("body").tooltip({ selector: '[data-toggle=tooltip]' });
+                			 $('.dropdown-menu li a.has-submenu').on('click', function(event) {
+      event.stopPropagation();
+      $(this).closest('.dropdown').addClass('open');
+    });
+	
+	$('[data-toggle="submenu"]').on('click', function(event) {
+      let loc_sef = $(this),
+        loc_submenu = loc_sef.next('.main-submenu');
+      loc_submenu.slideToggle();
+    })
+	
+	let clickedMenu;
+    $('.has-dropdown', '#main-menu').click(function() {
+		 
+      clickedMenu = $(this);
+      var loc_self = $(this),
+        loc_dropdown_menu = $('.menu-dropdown', loc_self),
+        loc_dropdown = loc_dropdown_menu.clone(),
+        loc_pos = loc_dropdown_menu.offset();
+      $('#dropdown_container').remove();
+      $('#menubar').append('<div id="dropdown_container"></div>')
+      $('#dropdown_container').append(loc_dropdown);
+      $('#dropdown_container').css({
+        position: 'fixed',
+        top: loc_pos.top - 30,
+        left: loc_pos.left
+      });
+    });
+
+    $('body').click(function(e) {
+      if (!$(e.target).closest('#dropdown_container').length) {
+        $('#dropdown_container').remove();
+      }
+     
+      if ($(e.target).attr('data-toggle') === 'submenu') {
+        const loc_self = $(e.target);
+        loc_self.toggleClass('submenu-open')
+        loc_self.next('.main-submenu').slideToggle();
+      }
+
+    });
+
+    // First calculate the footer height
+    var footerHeight = $('#menubar .menubar-foot-panel').outerHeight();
+    footerHeight = Math.max(footerHeight, 1)+200;
+	 
+    $('.menubar-scroll-panel').css({ 'margin-bottom': footerHeight });
+
+
+    // Check if there is a menu
+    var menu = $('#menubar');
+    if (menu.length === 0)
+      return;
+
+    // Get scrollbar elements
+    var menuScroller = $('.menubar-scroll-panel');
+    var parent = menuScroller.parent();
+
+    // Add the scroller wrapper
+    if (parent.hasClass('nano-content') === false) {
+      menuScroller.wrap('<div class="nano"><div class="nano-content"></div></div>');
+    }
+
+    // Set the correct height
+    var height = $(window).height() - menu.position().top - menu.find('.nano').position().top;
+    var scroller = menuScroller.closest('.nano');
+    scroller.css({ height: height+500 });
+
+    // Add the nanoscroller
+    scroller.nanoScroller({ preventPageScrolling: true, iOSNativeScrolling: true });
+}
+
+ 
+
+    function getRatingString(rating)
+        {
+            
+               var ratingDiv="<div class='starrr'>";
+
+                for (var i = 1; i <= rating; i++)
+                {
+                    ratingDiv+="<i class='fa-star fa'></i>"
+                }
+                for (var i = rating; i < 5; i++)
+                {
+                    ratingDiv+="<i class='fa-star fa starempty'></i>"
+                }
+
+                ratingDiv+="</div>"
+                return ratingDiv;
+            }
+        $("body").on("change", ".mahat_transliterate", function(a) {
+                 if ($('#transliterateCheck').prop('checked')) {
+                  var currentid=$(this).attr("id");
+                  $.ajax({
+                        url: '@Url.Action("get_Transcript","users")',
+                        type: 'GET',
+                        data: {
+                            input: $(this).val() 
+                        },
+                        success: function (response) {
+                    $("#" + currentid).val(response);
+                        },
+                        error: function () {
+                            console.log('Error occurred during translation.');
+                        }
+                    });
+                    }
+                })
+            
+           $("body").on("click", ".download_from_cloud", function(a) {
+                $(".page-loader").show()
+                a.preventDefault();
+                $.ajax({
+                    url: '@Url.Action("download","users")',
+                    data: { filename: $(this).attr("id") },
+                    success: function(data) {
+                        $(".page-loader").hide()
+                        var url = data;
+                        if (data != "error")
+                            if (data.indexOf("Error") != -1) {
+                                swal({
+                                    title: '',
+                                    text: data,
+                                    type: 'error',
+                                    buttonsStyling: false,
+                                    confirmButtonClass: 'btn btn-primary'
+                                })
+                            }
+                            else {
+                                window.open(url, '_blank');
+                            }
+
+                    }, error: function(jqXHR, textStatus, errorThrown) {
+                        $(".page-loader").hide()
+                    }
+                });
+            });
+                                            function getAutho(controllername,viewname){
+		 
+											
+												
+                                                var a =  eval("@Context.Session.GetString("MahatProjectsrole_JSON")".replace(/&quot;/g, '"'))
+                                                
+                                                var index = 0;
+                                                var found;
+                                                var entry;
+                                                for (index = 0; index < a.length; ++index) {
+                                                    entry = a[index];
+                                                    if (entry.controllername == controllername && entry.viewname== viewname) {
+                                                        found = entry;
+                                                        
+                                                        break;
+                                                    }
+                                                }
+                                                return found;
+
+                                            }
+											
+											
+											function getAuthoController(controllername){
+		 
+											 
+												 
+												var a =  eval("@Context.Session.GetString("MahatProjectsrole_JSON")".replace(/&quot;/g, '"'))
+												 
+												var index = 0;
+												var found=[];
+												var entry;
+												for (index = 0; index < a.length; ++index) {
+													entry = a[index];
+													
+													if (entry.controllername == controllername) {
+													 
+														found.push(entry);
+														 
+														//break;
+													}
+												}
+												return found;
+
+											}
+                                            	function getRandomColor() {
+		                                        var letters = '0123456789ABCDEF';
+		                                        var color = '#';
+		                                        for (var i = 0; i < 6; i++) {
+		                                        color += letters[Math.floor(Math.random() * 16)];
+		                                        }
+		                                        return color;
+	                                        }
+                                            function getFixedColor(arrayVal){
+											
+											    var listofColors=['#A5D7FD','#63EEBF','#FF7C8F','#A4E063','#FEC85E','#66A4FE','#B2BECE','#F1948A','#EC7063','#B03A2E','#BB8FCE','#5B2C6F','#F1C40F','#E5E7E9','#717D7E']
+											    if(arrayVal >=listofColors.length){
+											       return getRandomColor()
+											     }
+											    return listofColors[arrayVal];
+											}
+function get_dependent_li_l(data) {
+                                            var htmlRetStr = "";
+
+                                            if ((data).length > 1) {
+                                                htmlRetStr = "<ul class='recurseObj' >"
+                                                $.each((data), function (key, jdata) {
+                                                    htmlRetStr += "<li class='keyObj'>";
+                                                    $.each(eval(jdata), function (index, jdata) {
+                                                        
+                                                        if ((jdata ? jdata : '').toString().includes('http')) {
+                                                            if ((jdata ? jdata : '') != '') {
+
+                                                                var splitted_urls = (jdata ? jdata : '').split('|');
+                                                                var uploadedfiles = "";
+                                                                for (var i = 0; i < splitted_urls.length; i++) {
+
+
+                                                                    if (splitted_urls[i] != null && splitted_urls[i] != "") {
+                                                                        uploadedfiles += '<a  href=' + splitted_urls[i] + ' class="table_files"><i class="fa fa-paperclip"></i></a>'
+
+                                                                         
+                                                                    }
+
+
+                                                                }
+                                                                htmlRetStr += "<strong>" + index + ":</strong>" + uploadedfiles + "</br>";
+
+                                                            }
+                                                        } else {
+                                                            htmlRetStr += "<strong>" + index + ":</strong>" + (jdata ? jdata : '') + "</br>";
+                                                        }
+
+
+                                                    })
+                                                    htmlRetStr += '</li>';
+                                                })
+
+                                                htmlRetStr += '</ul>';
+                                            } else {
+
+                                                
+                                                $.each((data), function (key, jdata) {
+                                                     
+                                                    $.each(eval(jdata), function (index, jdata) {
+                                                        
+                                                        if ((jdata ? jdata : '').toString().includes('http')) {
+                                                            if ((jdata ? jdata : '') != '') {
+
+                                                                var splitted_urls = (jdata ? jdata : '').split('|');
+                                                                var uploadedfiles = "";
+                                                                for (var i = 0; i < splitted_urls.length; i++) {
+
+
+                                                                    if (splitted_urls[i] != null && splitted_urls[i] != "") {
+                                                                        uploadedfiles += '<a  href=' + splitted_urls[i] + ' class="table_files"><i class="fa fa-paperclip"></i></a>'
+
+                                                                         
+                                                                    }
+
+
+                                                                }
+                                                                htmlRetStr += "<strong>" + index + ":</strong>" + uploadedfiles + "</br>";
+
+                                                            }
+                                                        } else {
+                                                            htmlRetStr += "<strong>" + index + ":</strong>" + (jdata ? jdata : '') + "</br>";
+                                                        }
+
+
+                                                    })
+                                                     
+                                                })
+
+                                            }
+                                            
+                                            return (htmlRetStr);
+                                        }
+
+
+                                            function get_dependent_li(data) {
+                                            var htmlRetStr = "";
+
+                                            if (JSON.parse(data).length > 1) {
+                                                htmlRetStr = "<ul class='recurseObj' >"
+                                                $.each(JSON.parse(data), function (key, jdata) {
+                                                    htmlRetStr += "<li class='keyObj'>";
+                                                    $.each(eval(jdata), function (index, jdata) {
+                                                        
+                                                        if ((jdata ? jdata : '').toString().includes('http')) {
+                                                            if ((jdata ? jdata : '') != '') {
+
+                                                                var splitted_urls = (jdata ? jdata : '').split('|');
+                                                                var uploadedfiles = "";
+                                                                for (var i = 0; i < splitted_urls.length; i++) {
+
+
+                                                                    if (splitted_urls[i] != null && splitted_urls[i] != "") {
+                                                                        uploadedfiles += '<a  href=' + splitted_urls[i] + ' class="table_files"><i class="fa fa-paperclip"></i></a>'
+
+                                                                         
+                                                                    }
+
+
+                                                                }
+                                                                htmlRetStr += "<strong>" + index + ":</strong>" + uploadedfiles + "</br>";
+
+                                                            }
+                                                        } else {
+                                                            htmlRetStr += "<strong>" + index + ":</strong>" + (jdata ? jdata : '') + "</br>";
+                                                        }
+
+
+                                                    })
+                                                    htmlRetStr += '</li>';
+                                                })
+
+                                                htmlRetStr += '</ul>';
+                                            } else {
+
+                                                
+                                                $.each(JSON.parse(data), function (key, jdata) {
+                                                     
+                                                    $.each(eval(jdata), function (index, jdata) {
+                                                        
+                                                        if ((jdata ? jdata : '').toString().includes('http')) {
+                                                            if ((jdata ? jdata : '') != '') {
+
+                                                                var splitted_urls = (jdata ? jdata : '').split('|');
+                                                                var uploadedfiles = "";
+                                                                for (var i = 0; i < splitted_urls.length; i++) {
+
+
+                                                                    if (splitted_urls[i] != null && splitted_urls[i] != "") {
+                                                                        uploadedfiles += '<a  href=' + splitted_urls[i] + ' class="table_files"><i class="fa fa-paperclip"></i></a>'
+
+                                                                         
+                                                                    }
+
+
+                                                                }
+                                                                htmlRetStr += "<strong>" + index + ":</strong>" + uploadedfiles + "</br>";
+
+                                                            }
+                                                        } else {
+                                                            htmlRetStr += "<strong>" + index + ":</strong>" + (jdata ? jdata : '') + "</br>";
+                                                        }
+
+
+                                                    })
+                                                     
+                                                })
+
+                                            }
+                                            
+                                            return (htmlRetStr);
+                                        }
+
+                                         function get_dependent_table(data) {
+
+	                                            var htmlRetStr="";
+		                                        $.each(JSON.parse(data), function (key, jdata) {
+												htmlRetStr += "<tr>"
+			                                        $.each(eval(jdata), function (index, jdata) {
+				                                        
+                                                        if ((jdata ? jdata : '').toString().includes('http')) {
+                                                            
+
+                                                                var splitted_urls = (jdata ? jdata : '').split('|');
+                                                                var uploadedfiles = "";
+                                                                for (var i = 0; i < splitted_urls.length; i++) {
+
+
+                                                                    if (splitted_urls[i] != null && splitted_urls[i] != "") {
+                                                                        uploadedfiles += '<a  href=' + splitted_urls[i] + ' class="table_files"><i class="fa fa-paperclip"></i></a>'
+
+                                                                         
+                                                                    }
+
+
+                                                                }
+																htmlRetStr += "<td class='automaton_table_label'>";
+                                                                htmlRetStr += uploadedfiles ;
+																htmlRetStr += '</td>';
+
+                                                             
+                                                        } else {
+															htmlRetStr += "<td class='automaton_table_label'>";
+                                                            htmlRetStr += (jdata ? jdata : '') ;
+															htmlRetStr += '</td>';
+                                                        }
+				                                        
+				                                        
+
+
+			                                        })
+													
+													htmlRetStr += '</tr>';
+		                                        })
+
+		                                        
+	 
+
+	                                        return (htmlRetStr);
+                                        }
+
+                                        function collect_formated_data(data) 
+                                            {
+		                                            var htmlRetStr="";
+		                                             if ((data ? data : '').toString().includes('http')) {
+				
+
+					                                            var splitted_urls = (data ? data : '').split('|');
+					                                            var uploadedfiles = "";
+					                                            for (var i = 0; i < splitted_urls.length; i++) {
+
+
+						                                            if (splitted_urls[i] != null && splitted_urls[i] != "") {
+							                                            uploadedfiles += '<a  href=' + splitted_urls[i] + ' class="table_files"><i class="fa fa-paperclip"></i></a>'
+
+							 
+						                                            }
+
+
+					                                            }
+					                                            htmlRetStr += uploadedfiles ;
+				 
+
+				 
+			                                            } else {
+				                                              htmlRetStr += (data ? data : '') ;
+			 
+			                                            }
+                                                    return htmlRetStr;
+                                            }
+
+
+                    
+
+                                        </script>
+                                        
+
+<script src="~/js/Demo.js"></script>
+<script>
+$('.main-content').click(function(){
+		 
+		$('body').removeClass('menubar-open')
+
+	})	
+$(window).load(function () {
+            // select element and fade it out
+            setTimeout(function() {
+    $('.page-loader').fadeOut();
+}, 2000);
+
+        });
+ $('.navigatestartupurl').click(function(event) {
+        event.preventDefault(); // Prevent default behavior of the anchor tag
+        let userRole = "@Context.Session.GetString("MahatProjectsuserrole")"; 
+                                                switch (userRole) {
+
+            default:
+                get_Dashboard_url().then(function (url) {
+                window.location.href = (url !== '') ? url : window.location.href;
+            })
+            }
+
+    });
+    function get_Dashboard_url() {
+        return new Promise(function (resolve, reject) {
+            $.ajax({
+                url: '@Url.Action("get_Dashboard_Items", "users")',
+                dataType: 'json',
+                success: function (data) {
+                    if (data && data.length > 0) {
+                        let url = '@Url.Action("__action__", "__controller__")'
+                            .replace("__action__", data[0].actionmethodname)
+                            .replace("__controller__", data[0].controllername);
+
+                        url += "?isDashboardView=Y";
+                        resolve(url); // Resolve the promise with the URL
+                    } else {
+                        resolve('');
+                    }
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    resolve('');
+                }
+            });
+        });
+    }
+</script>
+</body>
+
+</html>
+

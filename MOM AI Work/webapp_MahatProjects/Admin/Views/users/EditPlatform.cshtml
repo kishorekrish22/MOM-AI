@@ -1,0 +1,722 @@
+
+			<!-- This code generated from staging Powered by Mahat, Source Machine : stg , Build Number : #2024-07-004 (Updated on 07/07/2024 22:07) on 12/26/2024 10:27:24 -->
+			@using Microsoft.AspNetCore.Http
+			@inject IHttpContextAccessor HttpContextAccessor
+            @using Admin;
+			@model MahatProjects.Models.usersModel
+			@{
+			ViewData["Title"] = @Resource.updateprofile;
+
+			Layout = "~/Views/Shared/_Layout.cshtml";
+			
+			}
+
+			@using(Html.BeginForm("EditPlatform", "users", FormMethod.Post, new { enctype="multipart/form-data", @id = "formId"}))
+			{
+
+			<div class="card card-block contCard"><!--Form_Main_Card-->
+				<div class="mobileHeader"><!--form_card_header-->
+					<div class="row">
+						<div class="col-sm-12 col-xs-12">
+							<h4 class="formHdr">@Resource.updateprofile</h4>
+						</div>
+					</div>
+				</div><!--form_card_header-->
+				<!--form_error_display-->
+				@if(ViewData["message"] != null)
+				{
+				<div class="row">
+				<div class="col-sm-12 col-xs-12">
+				<div class="alert alert-danger alert-dismissible ">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">x</span>
+				</button>
+				Info :  @ViewData["message"]
+				</div>
+				</div>
+				</div>
+				}
+				
+				
+				 
+				
+				<!--form_error_display-->
+				<div class=""><!--form_inner_card-->
+					<div class="card-block"><!--form_inner_card_block-->
+					    @Html.HiddenFor(m => m.id)
+                            
+						 
+
+						
+						<div class="row"><!--field_container_row-->
+							<!--fieldsStartsHere-->
+						       <div class="col-sm-6 col-xs-12 p-2 tenantSection">
+						<div>
+						<div class="form-group form-group--float-above my-3" > 
+						<label class="tenant_display tenant_label">@Resource.tenantdisplayname</label>
+						<select name="tenantid" id="tenantid" class="form-control tenant_display">
+						</select>
+						<i class="form-group__bar"></i>
+						</div>
+						
+						<label id="tenantid-error" class="help-block" style="display: none" for="tenantid"></label>
+						</div>
+						</div>		
+								<div class="col-sm-6 col-xs-12 p-2 firstname_craftmyapp_container">
+						<div>
+							<div class="form-group" > 
+								<label>@Resource.users_firstname <b class="iconRed">*</b></label>
+                                @Html.TextBoxFor(m => m.firstname, new {@type="text",@maxlength="50", @class = "form-control form-control-lg mahat_transliterate required" })
+
+							     @Html.ValidationMessageFor(model => model.firstname)
+							</div>
+						</div>
+					</div>
+<div class="col-sm-6 col-xs-12 p-2 lastname_craftmyapp_container">
+						<div>
+							<div class="form-group" > 
+								<label>@Resource.users_lastname</label>
+                                @Html.TextBoxFor(m => m.lastname, new {@type="text",@maxlength="50", @class = "form-control form-control-lg mahat_transliterate " })
+
+							     @Html.ValidationMessageFor(model => model.lastname)
+							</div>
+						</div>
+					</div>
+<div class="col-sm-6 col-xs-12 p-2 profilepicture_craftmyapp_container">
+                            	<div>
+                            		<div class="form-group form-group--float-above my-3" > 
+                            			<label>@Resource.users_profilepicture</label>
+                            			<br><input type="file" accept="image/*"  id="profilepicture" name="profilepicture">
+
+                            			<div id="profilepictureDisp" href=""></div>
+                            			<i class="form-group__bar" ></i>
+                            		</div>
+                            		@Html.ValidationMessageFor(model => model.profilepicture)
+                            		<label id="profilepicture-error" class="help-block" style="display: none" for="profilepicture"></label>
+                            	</div>
+                            </div>
+<div class="col-sm-6 col-xs-12 p-2 username_craftmyapp_container">
+						<div>
+							<div class="form-group" > 
+								<label>@Resource.users_username <b class="iconRed">*</b></label>
+                                @Html.TextBoxFor(m => m.username, new {@type="text",@maxlength="150", @class = "form-control form-control-lg mahat_transliterate required" })
+
+							     @Html.ValidationMessageFor(model => model.username)
+							</div>
+						</div>
+					</div>
+<div class="col-sm-6 col-xs-12 p-2 emailid_craftmyapp_container">
+						<div>
+							<div class="form-group" > 
+								<label>@Resource.users_emailid <b class="iconRed">*</b></label>
+                                @Html.TextBoxFor(m => m.emailid, new {@type="email",@maxlength="128", @class = "form-control form-control-lg required" })
+
+							     @Html.ValidationMessageFor(model => model.emailid)
+							</div>
+						</div>
+					</div>
+<div class="col-sm-6 col-xs-12 p-2 mobilenumber_craftmyapp_container craftmyapp_phone_container">
+						<div>
+							<div class="form-group" > 
+								<label>@Resource.users_mobilenumber <b class="iconRed">*</b></label>
+                                <input type="tel" name="mobilenumber_ip" id="mobilenumber_ip" class="form-control  required">
+@Html.HiddenFor(m => m.mobilenumber, new {@class = "invalidphone" })
+
+							     @Html.ValidationMessageFor(model => model.mobilenumber)
+							</div>
+						</div>
+					</div>
+<div class="col-sm-6 col-xs-12 p-2 userrole_craftmyapp_container">
+								<div>
+									<div class="form-group form-group--float-above my-3" > 
+										<label>@Resource.users_userrole <b class="iconRed">*</b></label>
+										<select name="userrole" id="userrole"  class="form-control select2 select2-list  required"></select>
+
+									</div>
+									@Html.ValidationMessageFor(model => model.userrole)
+									<label id="userrole-error" class="help-block" style="display: none" for="userrole"></label>
+								</div>
+							</div>
+ 
+                    <div class="col-sm-12 col-xs-12 mt-3 alloweddevices_craftmyapp_container"><div class="card card card-blue"><!--Dependent Allowed Devices Containder Block-->
+                        <div class="card-head">
+                            <header>
+                                @Resource.alloweddevices
+                            </header>
+                           
+                        </div>
+                        <div class="card-body p-0 form-elements-group-container fluent-card-body commonContainer">
+                            <div id="alloweddevicesContainer" class="alloweddevicesContainer">
+							</div>
+
+            
+                        </div>
+                    </div></div><!--Dependent Allowed Devices Containder Block-->
+			 
+
+
+							<!--fieldsEndsHere-->	
+						</div><!--field_container_row-->
+
+
+						<div class="card-block"><!--form_button_card_block-->
+							<button type="button" onclick="window.history.back()"  class="btn btn-secondary cma_cancel_button waves-effect">@Resource.back</button>
+							<button type="button" id="btnSubmit" class="btn cma_primary_button  cma_save_button waves-effect pull-right">@Resource.updateprofile</button>
+						</div><!--form_button_card_block-->
+
+
+					</div><!--form_inner_card_block-->
+				</div><!--form_inner_card-->
+			</div><!--Form_Main_Card-->
+
+			}<!--EndFORM-->
+
+
+			
+			 <!--from_cma_script-->
+			 
+			
+			<script>
+var strprofilepicture;
+</script>
+@if (Model != null)
+{
+if(Model.profilepicture != null && Model.profilepicture.ToString() != "")
+{
+<script>
+var uploaded_profilepicture = "@Model.profilepicture".split('|');
+                                            var iterate = 0;
+                                            for (var i = 0; i < uploaded_profilepicture.length; i++) {
+
+
+	                                            if (uploaded_profilepicture[i] != "") {
+		                                            iterate = iterate + 1;
+		                                            if (iterate == 1)
+			                                            $('#profilepictureDisp').append('<a href=' + uploaded_profilepicture[i] + ' class="imgprofilepicture auto_clr_photo"><img  src=' + uploaded_profilepicture[i] + ' width="100px" /></a>')
+		                                            else
+
+			                                            $('#profilepictureDisp').append('<div style="display:none"> <a href=' + uploaded_profilepicture[i] + ' class="imgprofilepicture auto_clr_photo"><img  src=' + uploaded_profilepicture[i] + ' width="100px" /></a></div>')
+		 
+	                                            }
+
+
+                                            }
+$('body').on('click', 'a.imgprofilepicture', function (e) {
+                            e.preventDefault();
+                            $('.imgprofilepicture').colorbox({ rel: '.imgprofilepicture', width: "90%", height: "80%" });
+                            $.colorbox({ open: true });
+                            });
+</script>
+}
+}
+<link href="~/components/jquery-colorbox/colorbox.css" rel="stylesheet" />
+								<script src="~/components/jquery-colorbox/jquery.colorbox.js"></script> 
+<script>
+$(document).ready(function () {
+var mobilenumber_input = document.querySelector("#mobilenumber_ip");
+        var itimobilenumber_input = window.intlTelInput(mobilenumber_input, {
+            nationalMode: true,
+            initialCountry: "in",
+            preferredCountries: ['us','in','sg']
+        });
+        itimobilenumber_input.setNumber($('#mobilenumber').val());
+        var handleChange_mobilenumber_input = function () {
+             var text = (itimobilenumber_input.isValidNumber()) ? itimobilenumber_input.getNumber() : "invalid";
+             $('#mobilenumber').val(text);
+        };
+
+        // listen to "keyup", but also "change" to update when the user selects a country
+        mobilenumber_input.addEventListener('change', handleChange_mobilenumber_input);
+        mobilenumber_input.addEventListener('keyup', handleChange_mobilenumber_input);
+
+        mobilenumber_input.addEventListener("countrychange", function () {
+            $('#mobilenumber_ip').val("");
+            $('#mobilenumber').val("");
+        })
+})
+</script>
+
+			
+			
+
+        <script>
+var struserrole;
+</script>
+    @if (Model != null)
+    {
+        if(Model.userrole != null && Model.userrole.ToString() != "")
+        {
+        <script>
+             struserrole="@Model.userrole"
+        </script>
+        }
+    }
+<script>
+       
+        function fill_userrole()
+        {
+        $.ajax({
+        url: '@Url.Action("get_roles","users")',
+        dataType: 'json',
+        {parentname}
+        success: function(data) {
+        if (data.length > 0) {
+            data = data.filter(item => item.rolename !== null);
+            data.sort((a, b) =>
+	            String(a.rolename).toLowerCase().localeCompare(String(b.rolename).toLowerCase()) 
+            );        
+        }    
+    
+
+       var ddltarget_userrole="#userrole"
+	    $(ddltarget_userrole).empty();
+		$(ddltarget_userrole).append("<option value=''>Choose</option>")
+
+		$.each(data, function(index, optionDataInner) {
+
+				
+									if(struserrole== optionDataInner.rolename)
+									   $(ddltarget_userrole).append('<option selected value="' + optionDataInner.rolename + '">' + optionDataInner.rolename+ '</option>')
+									else
+									   $(ddltarget_userrole).append('<option  value="' + optionDataInner.rolename + '">' + optionDataInner.rolename+ '</option>')
+								
+							  		$("#userrole").trigger("change")
+							  
+
+
+
+		});
+
+		$("#userrole").select2()
+		 
+
+
+},
+error: function(jqXHR, textStatus, errorThrown) {
+if (JSON.stringify(jqXHR.responseText) == "\"API Authorization failed\"")
+{
+swal({
+title: 'Failed!',
+text: jqXHR.responseText,
+type: 'error',
+buttonsStyling: false,
+confirmButtonClass: 'btn btn-primary',
+allowOutsideClick: false
+}).then(function() {
+window.location = "@Url.Action("AuthorizationFailed", "users")"
+}) 
+}
+else
+{
+swal({
+title: 'Contact Administrator !',
+text: jqXHR.responseText,
+type: 'error',
+buttonsStyling: false,
+confirmButtonClass: 'btn btn-primary'
+}) 
+}
+}
+})
+		  }
+</script>
+
+			
+			<script>
+				$(document).ready(function () {
+				 
+				$(".btn-add-alloweddevices").click(function () {
+                 
+    
+				var index = Math.floor(Math.random() * (100000 - 1 + 1) + 57);
+			 $(".alloweddevices").removeClass('showthelables');
+               $(".btn-remove-row-alloweddevices").removeClass('btn-remove-row');
+				$("#alloweddevicesContainer").append(
+				'<div class="row m-t-10 alloweddevices dependentContainerBorder" id="alloweddevices' + index + '">' +
+
+				'<div class="col-sm-2 col-xs-12 p-2 devicename_craftmyapp_container">'+
+						'<div>'+
+							'<div class="form-group" >'+ 
+								'<label>@Resource.users_alloweddevices_devicename</label>'+
+                                    '<input  name="devicename' + index + '" id="devicename' + index + '"  type="text"  maxlength="1024" class="devicename form-control--active form-control mahat_transliterate form-control-lg " />' +
+
+							'</div>'+
+							
+						'</div>'+
+					'</div>'+
+'<div class="col-sm-2 col-xs-12 p-2 deviceid_craftmyapp_container">'+
+						'<div>'+
+							'<div class="form-group" >'+ 
+								'<label>@Resource.users_alloweddevices_deviceid</label>'+
+                                    '<input  name="deviceid' + index + '" id="deviceid' + index + '"  type="text"  maxlength="1024" class="deviceid form-control--active form-control mahat_transliterate form-control-lg " />' +
+
+							'</div>'+
+							
+						'</div>'+
+					'</div>'+
+'<div class="col-sm-2 col-xs-12 p-2 notificationid_craftmyapp_container">'+
+						'<div>'+
+							'<div class="form-group" >'+ 
+								'<label>@Resource.users_alloweddevices_notificationid</label>'+
+                                    '<input  name="notificationid' + index + '" id="notificationid' + index + '"  type="text"  maxlength="1024" class="notificationid form-control--active form-control mahat_transliterate form-control-lg " />' +
+
+							'</div>'+
+							
+						'</div>'+
+					'</div>'+
+ 
+
+				' <div class="col-sm-1 detele-common-icon"><button type="button" class="btn removebtn' + index + ' btn-danger  btn-remove-row-alloweddevices"><span class="fa fa-trash"></span></button></div>' +
+				'</div>'
+				);
+                    var cmafirstcontainer = $('.alloweddevicesContainer :first-child').attr("id")
+					$('#' + cmafirstcontainer).addClass('showthelables');
+                    $('.removebtn' + cmafirstcontainer.replace('alloweddevices', '')).addClass('btn-remove-row');
+
+                
+				 
+                
+                 
+
+				});
+				$('body').on('click', '.btn-remove-row-alloweddevices', function (e) {
+				    $(this).parent().parent().remove(); 
+                    
+                     
+                    $(".alloweddevices").removeClass('showthelables');
+                   // $(".btn-remove-row-alloweddevices").removeClass('btn-remove-row');
+                    var cmafirstcontainer=$('.alloweddevicesContainer :first-child').attr("id")
+                    $('#'+cmafirstcontainer).addClass('showthelables');
+                   // $('.removebtn'+cmafirstcontainer.replace('alloweddevices','')).addClass('btn-remove-row');
+				});
+				})
+				</script>
+			 
+
+@if (Model != null)
+{
+<script>
+$(document).ready(function () {
+var resultSet = ("@Model.alloweddevices" ? @Html.Raw(Json.Serialize(@Model.alloweddevices)) :[]);
+$.each(resultSet, function(key, obj) {
+
+
+ 			var index = Math.floor(Math.random() * (100000 - 1 + 1) + 57);
+			 $(".alloweddevices").removeClass('showthelables');
+               $(".btn-remove-row-alloweddevices").removeClass('btn-remove-row');
+				$("#alloweddevicesContainer").append(
+				'<div class="row m-t-10 alloweddevices dependentContainerBorder" id="alloweddevices' + index + '">' +
+                '<input type="hidden" class="users_alloweddevicesid" value="' + obj.users_alloweddevicesid + '">'+
+
+				'<div class="col-sm-2 col-xs-12 p-2 devicename_craftmyapp_container">'+
+						'<div>'+
+							'<div class="form-group" >'+ 
+								'<label>@Resource.users_alloweddevices_devicename</label>'+
+                                    '<input value="'+(obj.devicename?obj.devicename:'')+'" name="devicename' + index + '" id="devicename' + index + '"  type="text"  maxlength="1024" class="devicename form-control--active form-control mahat_transliterate form-control-lg " />' +
+
+							'</div>'+
+							
+						'</div>'+
+					'</div>'+
+'<div class="col-sm-2 col-xs-12 p-2 deviceid_craftmyapp_container">'+
+						'<div>'+
+							'<div class="form-group" >'+ 
+								'<label>@Resource.users_alloweddevices_deviceid</label>'+
+                                    '<input value="'+(obj.deviceid?obj.deviceid:'')+'" name="deviceid' + index + '" id="deviceid' + index + '"  type="text"  maxlength="1024" class="deviceid form-control--active form-control mahat_transliterate form-control-lg " />' +
+
+							'</div>'+
+							
+						'</div>'+
+					'</div>'+
+'<div class="col-sm-2 col-xs-12 p-2 notificationid_craftmyapp_container">'+
+						'<div>'+
+							'<div class="form-group" >'+ 
+								'<label>@Resource.users_alloweddevices_notificationid</label>'+
+                                    '<input value="'+(obj.notificationid?obj.notificationid:'')+'" name="notificationid' + index + '" id="notificationid' + index + '"  type="text"  maxlength="1024" class="notificationid form-control--active form-control mahat_transliterate form-control-lg " />' +
+
+							'</div>'+
+							
+						'</div>'+
+					'</div>'+
+ 
+
+				' <div class="col-sm-1  detele-common-icon"><button type="button" class="btn removebtn' + index + ' btn-danger btn-remove-row-alloweddevices"><span class="fa fa-trash"></span></button></div>' +
+				'</div>'
+    		    );
+                  var cmafirstcontainer = $('.alloweddevicesContainer :first-child').attr("id")
+					$('#' + cmafirstcontainer).addClass('showthelables');
+                    $('.removebtn' + cmafirstcontainer.replace('alloweddevices', '')).addClass('btn-remove-row');
+
+				 
+				
+				
+
+				
+                
+ 
+    });
+ 
+})
+</script>
+}
+
+
+			<script>
+            
+			  function getalloweddevices() {
+		 
+				 	$("#alloweddevices").val("");
+					var alloweddevicesModel = [];
+
+				
+					
+					
+					var el = $('.alloweddevicesContainer .alloweddevices');
+					
+					el.each(function (cnt) {
+					
+							alloweddevicesAttributes = {}
+							
+							 alloweddevicesAttributes['devicename']=($(this).find('.devicename').val() ? $(this).find('.devicename').val().toString() :'')
+alloweddevicesAttributes['deviceid']=($(this).find('.deviceid').val() ? $(this).find('.deviceid').val().toString() :'')
+alloweddevicesAttributes['notificationid']=($(this).find('.notificationid').val() ? $(this).find('.notificationid').val().toString() :'')
+alloweddevicesAttributes['users_alloweddevicesid']=($(this).find('.users_alloweddevicesid').val() != undefined ? $(this).find('.users_alloweddevicesid').val().toString() : "0")
+alloweddevicesAttributes['craftmyapp_actionmethodname']='Update_Profile'
+alloweddevicesAttributes['record_order']=cnt
+alloweddevicesAttributes['cma_client_row_id']=$(this).attr("id").replace("alloweddevices","")
+
+							
+							alloweddevicesModel.push(alloweddevicesAttributes);
+					
+					
+					
+					});
+					
+				
+					//var jsonalloweddevices = JSON.stringify(alloweddevicesModel);
+					//$("#alloweddevices").val(jsonalloweddevices);
+					return alloweddevicesModel
+				
+				
+				}
+
+			
+			</script>
+			<script>
+$(document).ready(function () {
+	
+	
+           
+                $.validator.addMethod("invalidphone", function (value, element) {
+                if (value == 'invalid') {
+                return false;
+                }
+                return true;
+                }, "Please enter valid value");
+
+                                        $('#formId').validate({
+                                        ignore: ":hidden:not(.invalidphone)",
+                                        highlight: function(element) {
+                                        $(element).closest('.form-group').addClass('has-error');
+                                        $(element).closest('.form-group').removeClass('has-success');
+                                        $(element).addClass('form-control-error');
+                                        $(element).removeClass('form-control-success');
+                                        },
+                                        unhighlight: function(element) {
+                                        $(element).closest('.form-group').removeClass('has-error');
+                                        $(element).closest('.form-group').addClass('has-success');
+                                        $(element).addClass('form-control-success');
+                                        $(element).removeClass('form-control-error');
+                                        },
+                                        errorElement: 'span',
+                                        errorClass: 'help-block',
+                                        errorPlacement: function (error, element) {
+                                                    if (element.hasClass("invalidphone")) {
+                                                        error.addClass("invalidphoneerror");
+                                                        error.insertAfter(element);
+                                                    } else {
+                                                        error.insertAfter(element);
+                                                    }
+                                                }
+                                        });
+ 	 
+var validator = $("#formId").validate({ /* settings */ });
+ 
+$("#btnSubmit").click(function(){
+ 
+ 
+ var alloweddevicesModel=getalloweddevices()
+
+
+ 
+ 
+
+if ($("#formId").valid()){
+ $(".page-loader").show()
+ 
+ var form = $('#formId')[0];
+ var formdata = new FormData(form);
+
+ for (var i = 0; i < alloweddevicesModel.length; i++) {
+formdata.append("alloweddevices[" + i + "].devicename", alloweddevicesModel[i].devicename)
+formdata.append("alloweddevices[" + i + "].record_order", alloweddevicesModel[i].record_order)
+formdata.append("alloweddevices[" + i + "].cma_client_row_id", alloweddevicesModel[i].cma_client_row_id)
+formdata.append("alloweddevices[" + i + "].deviceid", alloweddevicesModel[i].deviceid)
+formdata.append("alloweddevices[" + i + "].notificationid", alloweddevicesModel[i].notificationid)
+formdata.append("alloweddevices[" + i + "].users_alloweddevicesid", alloweddevicesModel[i].users_alloweddevicesid)
+formdata.append("alloweddevices[" + i + "].usersid", $("#id").val())
+
+formdata.append("alloweddevices[" + i + "].craftmyapp_actionmethodname", 'Update_Profile')
+}
+
+
+ 
+ 
+ 
+$.ajax({
+url: '@Url.Action("EditPlatform")',
+type:'POST',
+enctype: 'multipart/form-data',
+processData: false,   
+contentType: false,
+cache: false,
+data: formdata,
+success: function(data) {
+  
+  $(".page-loader").hide();
+ if(data=="Success"){
+ $(".page-loader").hide();
+     
+ 	var Actions_=getAutho("users","list")
+	if(Actions_ !=  undefined)
+	{
+		
+                                                                        if($("#tenantid").val()==null || $("#tenantid").val()=="")
+                                                                        {
+                                                                        var list_URL = "@Url.Action("IndexPlatform", "users")"
+		                                                                window.location=list_URL;
+                                                                        }else{
+                                                                                var list_URL = "@Url.Action("entry.viewname", "users")"
+		                                                                list_URL = list_URL.replace("entry.viewname", Actions_.actionmethodname);
+		                                                                window.location=list_URL;
+
+                                                                         }
+
+                                                                        
+	 
+	}
+   
+ }
+    else {
+                                $(".page-loader").hide();
+                                swal({
+                                    title: "Error !!",
+                                    text: data,
+
+                                    type: "error",
+                                    showCancelButton: false,
+                                    confirmButtonText: "OK",
+                                })
+
+
+                            }
+
+ 
+},
+	error: function(jqXHR, textStatus, errorThrown) {
+	if (JSON.stringify(jqXHR.responseText) == "\"API Authorization failed\"")
+	{
+	swal({
+	title: 'Failed!',
+	text: jqXHR.responseText,
+	type: 'error',
+	buttonsStyling: false,
+	confirmButtonClass: 'btn btn-primary',
+	allowOutsideClick: false
+	}).then(function() {
+	window.location = "@Url.Action("AuthorizationFailed", "users")"
+	}) 
+	}
+	else
+	{
+	swal({
+	title: 'Contact Administrator !',
+	text: jqXHR.responseText,
+	type: 'error',
+	buttonsStyling: false,
+	confirmButtonClass: 'btn btn-primary'
+	}) 
+	}
+	}
+})
+
+
+
+
+}else{
+validator.focusInvalid();
+swal({
+title: 'Validation Failed !',
+text: "Please check your entry",
+type: 'error',
+buttonsStyling: false,
+confirmButtonClass: 'btn btn-primary'
+ })
+}
+})
+})
+
+
+</script>
+
+			<script>
+			$(document).ready(function () {
+				fill_userrole()
+
+				$("#tenantid").change(function(){
+						
+						fill_userrole()
+
+				})
+			
+
+			});
+			</script>
+			<script>
+																		$('.tenantSection').hide()
+																</script>
+            <script>
+														$(document).ready(function(){
+
+                                                            if("@Context.Session.GetString("MahatProjectsloginUserID")".toLowerCase()=="@Model.id".toLowerCase())
+														   $(".userrole_craftmyapp_container").hide()
+
+														})
+
+														</script>
+            
+
+			 
+             
+                
+			 <!--to_cma_script-->
+			<script>
+														$(document).ready(function(){
+														$("#username").prop("readonly", true);
+
+														})
+
+														</script>
+<script>
+					$(document).ready(function () {
+						 
+						$("#tenantid").change(function(){
+								 
+						})
+					
+
+					});
+					</script>
+
+
+

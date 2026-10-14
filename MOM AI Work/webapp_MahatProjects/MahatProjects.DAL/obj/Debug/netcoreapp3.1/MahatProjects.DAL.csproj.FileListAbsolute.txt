@@ -1,0 +1,13 @@
+D:\MOM AI Work\webapp_MahatProjects\MahatProjects.DAL\bin\Debug\netcoreapp3.1\MahatProjects.DAL.deps.json
+D:\MOM AI Work\webapp_MahatProjects\MahatProjects.DAL\bin\Debug\netcoreapp3.1\MahatProjects.DAL.dll
+D:\MOM AI Work\webapp_MahatProjects\MahatProjects.DAL\bin\Debug\netcoreapp3.1\MahatProjects.DAL.pdb
+D:\MOM AI Work\webapp_MahatProjects\MahatProjects.DAL\bin\Debug\netcoreapp3.1\MahatProjects.Models.dll
+D:\MOM AI Work\webapp_MahatProjects\MahatProjects.DAL\bin\Debug\netcoreapp3.1\MahatProjects.Models.pdb
+D:\MOM AI Work\webapp_MahatProjects\MahatProjects.DAL\obj\Debug\netcoreapp3.1\MahatProjects.DAL.csproj.AssemblyReference.cache
+D:\MOM AI Work\webapp_MahatProjects\MahatProjects.DAL\obj\Debug\netcoreapp3.1\MahatProjects.DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\MOM AI Work\webapp_MahatProjects\MahatProjects.DAL\obj\Debug\netcoreapp3.1\MahatProjects.DAL.AssemblyInfoInputs.cache
+D:\MOM AI Work\webapp_MahatProjects\MahatProjects.DAL\obj\Debug\netcoreapp3.1\MahatProjects.DAL.AssemblyInfo.cs
+D:\MOM AI Work\webapp_MahatProjects\MahatProjects.DAL\obj\Debug\netcoreapp3.1\MahatProjects.DAL.csproj.CoreCompileInputs.cache
+D:\MOM AI Work\webapp_MahatProjects\MahatProjects.DAL\obj\Debug\netcoreapp3.1\MahatPro.75FE807E.Up2Date
+D:\MOM AI Work\webapp_MahatProjects\MahatProjects.DAL\obj\Debug\netcoreapp3.1\MahatProjects.DAL.dll
+D:\MOM AI Work\webapp_MahatProjects\MahatProjects.DAL\obj\Debug\netcoreapp3.1\MahatProjects.DAL.pdb

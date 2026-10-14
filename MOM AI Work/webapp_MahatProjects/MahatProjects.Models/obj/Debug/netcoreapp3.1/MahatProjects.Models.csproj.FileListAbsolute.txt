@@ -1,0 +1,10 @@
+D:\MOM AI Work\webapp_MahatProjects\MahatProjects.Models\bin\Debug\netcoreapp3.1\MahatProjects.Models.deps.json
+D:\MOM AI Work\webapp_MahatProjects\MahatProjects.Models\bin\Debug\netcoreapp3.1\MahatProjects.Models.dll
+D:\MOM AI Work\webapp_MahatProjects\MahatProjects.Models\bin\Debug\netcoreapp3.1\MahatProjects.Models.pdb
+D:\MOM AI Work\webapp_MahatProjects\MahatProjects.Models\obj\Debug\netcoreapp3.1\MahatProjects.Models.csproj.AssemblyReference.cache
+D:\MOM AI Work\webapp_MahatProjects\MahatProjects.Models\obj\Debug\netcoreapp3.1\MahatProjects.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\MOM AI Work\webapp_MahatProjects\MahatProjects.Models\obj\Debug\netcoreapp3.1\MahatProjects.Models.AssemblyInfoInputs.cache
+D:\MOM AI Work\webapp_MahatProjects\MahatProjects.Models\obj\Debug\netcoreapp3.1\MahatProjects.Models.AssemblyInfo.cs
+D:\MOM AI Work\webapp_MahatProjects\MahatProjects.Models\obj\Debug\netcoreapp3.1\MahatProjects.Models.csproj.CoreCompileInputs.cache
+D:\MOM AI Work\webapp_MahatProjects\MahatProjects.Models\obj\Debug\netcoreapp3.1\MahatProjects.Models.dll
+D:\MOM AI Work\webapp_MahatProjects\MahatProjects.Models\obj\Debug\netcoreapp3.1\MahatProjects.Models.pdb

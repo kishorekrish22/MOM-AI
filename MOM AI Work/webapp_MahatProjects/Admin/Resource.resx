@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader><data name="action" xml:space="preserve">
+    <value>Action</value>
+  </data><data name="addproject" xml:space="preserve">
+    <value>Add Project</value>
+  </data><data name="alerttemplates" xml:space="preserve">
+    <value>AlertTemplates</value>
+  </data><data name="alerttemplates_alertcarboncopyto" xml:space="preserve">
+    <value>Alert Carbon Copy To </value>
+  </data><data name="alerttemplates_alertcontent" xml:space="preserve">
+    <value>Alert Content</value>
+  </data><data name="alerttemplates_alertcopyto" xml:space="preserve">
+    <value>Alert Copy To</value>
+  </data><data name="alerttemplates_alertsubject" xml:space="preserve">
+    <value>Alert Subject</value>
+  </data><data name="alerttemplates_alerttype" xml:space="preserve">
+    <value>Alert Type</value>
+  </data><data name="alerttemplates_entityaction" xml:space="preserve">
+    <value>Entity Action</value>
+  </data><data name="alerttemplates_entityname" xml:space="preserve">
+    <value>Entity Name</value>
+  </data><data name="alerttemplates_sendasbatch" xml:space="preserve">
+    <value>Send as Batch?</value>
+  </data><data name="alerttemplateslist" xml:space="preserve">
+    <value>Alert Templates List</value>
+  </data><data name="alloweddevices" xml:space="preserve">
+    <value>Allowed Devices</value>
+  </data><data name="appadmin" xml:space="preserve">
+    <value>App Admin</value>
+  </data><data name="apply" xml:space="preserve">
+    <value>Apply</value>
+  </data><data name="authenticate" xml:space="preserve">
+    <value>Authenticate</value>
+  </data><data name="back" xml:space="preserve">
+    <value>Back</value>
+  </data><data name="cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data><data name="changepassword" xml:space="preserve">
+    <value>ChangePassword</value>
+  </data><data name="createalerttemplates" xml:space="preserve">
+    <value>Create Alert Templates</value>
+  </data><data name="createmaillog" xml:space="preserve">
+    <value>Create MailLog</value>
+  </data><data name="download" xml:space="preserve">
+    <value>Download</value>
+  </data><data name="environmentmanagement" xml:space="preserve">
+    <value>Environment Management</value>
+  </data><data name="forgotpasswordcommon" xml:space="preserve">
+    <value>Forgotten Password</value>
+  </data><data name="from" xml:space="preserve">
+    <value>From</value>
+  </data><data name="from" xml:space="preserve">
+    <value>From</value>
+  </data><data name="index" xml:space="preserve">
+    <value>Index</value>
+  </data><data name="listofuserprofiles" xml:space="preserve">
+    <value>List of User Profiles</value>
+  </data><data name="login" xml:space="preserve">
+    <value>Login</value>
+  </data><data name="logout" xml:space="preserve">
+    <value>Logout</value>
+  </data><data name="lookups" xml:space="preserve">
+    <value>lookups</value>
+  </data><data name="maillogs" xml:space="preserve">
+    <value>MailLogs</value>
+  </data><data name="maillogs_entityid" xml:space="preserve">
+    <value>Entity ID</value>
+  </data><data name="maillogs_entityname" xml:space="preserve">
+    <value>Entity Name</value>
+  </data><data name="maillogs_issent" xml:space="preserve">
+    <value>Is Sent ?</value>
+  </data><data name="maillogs_mailbody" xml:space="preserve">
+    <value>Mail Body</value>
+  </data><data name="maillogs_mailfor" xml:space="preserve">
+    <value>Mail For</value>
+  </data><data name="maillogs_mailsubject" xml:space="preserve">
+    <value>Mail Subject</value>
+  </data><data name="maillogs_mailto" xml:space="preserve">
+    <value>Mail To</value>
+  </data><data name="maillogslist" xml:space="preserve">
+    <value>MailLogs List</value>
+  </data><data name="manageroleauthorization" xml:space="preserve">
+    <value>Manage RoleAuthorization</value>
+  </data><data name="manageusers" xml:space="preserve">
+    <value>Manage Users</value>
+  </data><data name="platformadmin" xml:space="preserve">
+    <value>Platform Admin</value>
+  </data><data name="print" xml:space="preserve">
+    <value>Print</value>
+  </data><data name="project" xml:space="preserve">
+    <value>Project</value>
+  </data><data name="project_description" xml:space="preserve">
+    <value>Description</value>
+  </data><data name="project_handled_by" xml:space="preserve">
+    <value>Handled By</value>
+  </data><data name="project_interaction_date" xml:space="preserve">
+    <value>Interaction Date</value>
+  </data><data name="project_project_name" xml:space="preserve">
+    <value>Project name</value>
+  </data><data name="project_transcript" xml:space="preserve">
+    <value>Transcript</value>
+  </data><data name="project_video_upload" xml:space="preserve">
+    <value>Video Upload</value>
+  </data><data name="projectlist" xml:space="preserve">
+    <value>Project List</value>
+  </data><data name="providertenantdisplayname" xml:space="preserve">
+    <value></value>
+  </data><data name="registerprofile" xml:space="preserve">
+    <value>Register Profile</value>
+  </data><data name="removealerttemplates" xml:space="preserve">
+    <value>Remove Alert Templates</value>
+  </data><data name="removemaillog" xml:space="preserve">
+    <value>Remove MailLog</value>
+  </data><data name="removeproject" xml:space="preserve">
+    <value>Remove Project</value>
+  </data><data name="roles" xml:space="preserve">
+    <value>roles</value>
+  </data><data name="roles_parentname" xml:space="preserve">
+    <value>Parent Name</value>
+  </data><data name="roles_rolegroupname" xml:space="preserve">
+    <value>Role Group Name</value>
+  </data><data name="roles_rolehierarchynumber" xml:space="preserve">
+    <value>Role Hierarchy Number</value>
+  </data><data name="roles_rolename" xml:space="preserve">
+    <value>Role Name</value>
+  </data><data name="save" xml:space="preserve">
+    <value>Save</value>
+  </data><data name="submit" xml:space="preserve">
+    <value>Submit</value>
+  </data><data name="suspendprofile" xml:space="preserve">
+    <value>Suspend Profile</value>
+  </data><data name="tenantdisplayname" xml:space="preserve">
+    <value></value>
+  </data><data name="to" xml:space="preserve">
+    <value>To</value>
+  </data><data name="updatealerttemplates" xml:space="preserve">
+    <value>Update Alert Templates</value>
+  </data><data name="updatemaillog" xml:space="preserve">
+    <value>Update MailLog</value>
+  </data><data name="updateprofile" xml:space="preserve">
+    <value>Update Profile</value>
+  </data><data name="updateproject" xml:space="preserve">
+    <value>Update Project</value>
+  </data><data name="usermanagement" xml:space="preserve">
+    <value>User Management</value>
+  </data><data name="users" xml:space="preserve">
+    <value>users</value>
+  </data><data name="users_alloweddevices_deviceid" xml:space="preserve">
+    <value>Device ID</value>
+  </data><data name="users_alloweddevices_devicename" xml:space="preserve">
+    <value>Device Name</value>
+  </data><data name="users_alloweddevices_notificationid" xml:space="preserve">
+    <value>Notification ID</value>
+  </data><data name="users_emailid" xml:space="preserve">
+    <value>Email ID</value>
+  </data><data name="users_firstname" xml:space="preserve">
+    <value>First Name</value>
+  </data><data name="users_lastname" xml:space="preserve">
+    <value>Last Name</value>
+  </data><data name="users_mobilenumber" xml:space="preserve">
+    <value>Mobile Number</value>
+  </data><data name="users_passwordkey" xml:space="preserve">
+    <value>Password Key</value>
+  </data><data name="users_profilepicture" xml:space="preserve">
+    <value>Profile Picture</value>
+  </data><data name="users_username" xml:space="preserve">
+    <value>UserName</value>
+  </data><data name="users_userpassword" xml:space="preserve">
+    <value>User Password</value>
+  </data><data name="users_userrole" xml:space="preserve">
+    <value>User Role</value>
+  </data></root>

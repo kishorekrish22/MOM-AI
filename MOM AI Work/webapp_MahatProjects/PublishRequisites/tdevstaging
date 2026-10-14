@@ -1,0 +1,1644 @@
+server {
+				listen       80;
+				server_name  tdevstaging.craftmyapp.in;
+				location /FashionFKY/FashionFKYWebApi/{
+									proxy_pass "http://localhost:9011/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /AptitudeTestManagementSystem/AptitudeTestManagementSystemWebApi/{
+									proxy_pass "http://localhost:9019/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /MahatWebsite/MahatWebsiteWebApi/{
+									proxy_pass "http://localhost:9075/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /MahatWebsite/Admin/{
+									proxy_pass "http://localhost:9073/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /SdyGroceries/SdyGroceriesWebApi/{
+									proxy_pass "http://localhost:9087/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /SdyGroceries/Admin/{
+									proxy_pass "http://localhost:9085/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /project4/project4WebApi/{
+									proxy_pass "http://localhost:9107/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /project4/Admin/{
+									proxy_pass "http://localhost:9105/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /TempUnique/TempUniqueWebApi/{
+									proxy_pass "http://localhost:9155/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /TempUnique/Admin/{
+									proxy_pass "http://localhost:9153/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /MahatEntityBaseduuid/MahatEntityBaseduuidWebApi/{
+									proxy_pass "http://localhost:9287/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /MahatEntityBaseduuid/Admin/{
+									proxy_pass "http://localhost:9285/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /SynEnergy/SynEnergyWebApi/{
+									proxy_pass "http://localhost:9299/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /SynEnergy/Admin/{
+									proxy_pass "http://localhost:9297/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /LMV/LMVWebApi/{
+									proxy_pass "http://localhost:9359/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /LMV/Admin/{
+									proxy_pass "http://localhost:9357/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /NexGen/NexGenWebApi/{
+									proxy_pass "http://localhost:9631/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /NexGen/Admin/{
+									proxy_pass "http://localhost:9629/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /FoodDeliveryApp/FoodDeliveryAppWebApi/{
+									proxy_pass "http://localhost:9735/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /FoodDeliveryApp/Admin/{
+									proxy_pass "http://localhost:9733/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /Ukan/UkanWebApi/{
+									proxy_pass "http://localhost:9739/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /Ukan/Admin/{
+									proxy_pass "http://localhost:9737/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /NPmultiselect/NPmultiselectWebApi/{
+									proxy_pass "http://localhost:10063/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /NPmultiselect/Admin/{
+									proxy_pass "http://localhost:10061/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /PartnerMDMCLONE/{
+									proxy_pass "http://localhost:11013/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /MPSingleappidenlocal/{
+									proxy_pass "http://localhost:11313/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /Enterpricelarge/EnterpricelargeWebApi/{
+									proxy_pass "http://localhost:11458/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /Enterpricelarge/Admin/{
+									proxy_pass "http://localhost:11456/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /EnterpriceentitysizeallM/EnterpriceentitysizeallMWebApi/{
+									proxy_pass "http://localhost:11485/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /EnterpriceentitysizeallM/Admin/{
+									proxy_pass "http://localhost:11483/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /MultiAuthProvider/MultiAuthProviderWebApi/{
+									proxy_pass "http://localhost:11509/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /MultiAuthProvider/Admin/{
+									proxy_pass "http://localhost:11507/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /MultiOuthTEsting/MultiOuthTEstingWebApi/{
+									proxy_pass "http://localhost:11548/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /MultiOuthTEsting/Admin/{
+									proxy_pass "http://localhost:11546/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /sdyMultiOauthTestingLocal/sdyMultiOauthTestingLocalWebApi/{
+									proxy_pass "http://localhost:11557/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /sdyMultiOauthTestingLocal/Admin/{
+									proxy_pass "http://localhost:11555/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /EFORMTesting/EFORMTestingWebApi/{
+									proxy_pass "http://localhost:11590/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /EFORMTesting/Admin/{
+									proxy_pass "http://localhost:11588/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /EFORMPublishTesting/EFORMPublishTestingWebApi/{
+									proxy_pass "http://localhost:11593/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /EFORMPublishTesting/Admin/{
+									proxy_pass "http://localhost:11591/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /MultiOauthtestmvc/MultiOauthtestmvcWebApi/{
+									proxy_pass "http://localhost:11596/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /MultiOauthtestmvc/Admin/{
+									proxy_pass "https://localhost:11594/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /hierarchydependent/hierarchydependentWebApi/{
+									proxy_pass "http://localhost:11602/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /hierarchydependent/Admin/{
+									proxy_pass "http://localhost:11600/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /EFORMConsumer/EFORMConsumerWebApi/{
+									proxy_pass "http://localhost:11605/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /EFORMConsumer/Admin/{
+									proxy_pass "http://localhost:11603/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /IdentityServerTesting/IdentityServerTestingWebApi/{
+									proxy_pass "http://localhost:11611/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /IdentityServerTesting/Admin/{
+									proxy_pass "https://localhost:11609/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /sdyistTest/sdyistTestWebApi/{
+									proxy_pass "http://localhost:11614/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /sdyistTest/Admin/{
+									proxy_pass "https://localhost:11612/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /FitnessClub/FitnessClubWebApi/{
+									proxy_pass "http://localhost:11620/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /FitnessClub/Admin/{
+									proxy_pass "https://localhost:11618/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /LDAPModal/LDAPModalWebApi/{
+									proxy_pass "http://localhost:11626/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /LDAPModal/Admin/{
+									proxy_pass "https://localhost:11624/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /RoleAuthorization/RoleAuthorizationWebApi/{
+									proxy_pass "http://localhost:11635/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /RoleAuthorization/Admin/{
+									proxy_pass "http://localhost:11633/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /IconLibrary/IconLibraryWebApi/{
+									proxy_pass "http://localhost:11638/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /IconLibrary/Admin/{
+									proxy_pass "http://localhost:11636/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /EFMVCAPIIdentity/EFMVCAPIIdentityWebApi/{
+									proxy_pass "http://localhost:11659/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /EFMVCAPIIdentity/Admin/{
+									proxy_pass "http://localhost:11657/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /PlatformControls/PlatformControlsWebApi/{
+									proxy_pass "http://localhost:11671/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /PlatformControls/Admin/{
+									proxy_pass "http://localhost:11669/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /MahatFluentThemeTop/MahatFluentThemeTopWebApi/{
+									proxy_pass "http://localhost:11674/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /MahatFluentThemeTop/Admin/{
+									proxy_pass "http://localhost:11672/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /MahatFluentThemeLeft/MahatFluentThemeLeftWebApi/{
+									proxy_pass "http://localhost:11677/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /MahatFluentThemeLeft/Admin/{
+									proxy_pass "http://localhost:11675/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /PersonalizedFitnessTrainingApp/PersonalizedFitnessTrainingAppWebApi/{
+									proxy_pass "http://localhost:11680/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /PersonalizedFitnessTrainingApp/Admin/{
+									proxy_pass "http://localhost:11678/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /FluentDesignTop/FluentDesignTopWebApi/{
+									proxy_pass "http://localhost:11683/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /FluentDesignTop/Admin/{
+									proxy_pass "http://localhost:11681/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /FluentDesignLeft/FluentDesignLeftWebApi/{
+									proxy_pass "http://localhost:11686/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /FluentDesignLeft/Admin/{
+									proxy_pass "http://localhost:11684/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /SynergyFluentTop/SynergyFluentTopWebApi/{
+									proxy_pass "http://localhost:11689/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /SynergyFluentTop/Admin/{
+									proxy_pass "http://localhost:11687/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /RazGatway/RazGatwayWebApi/{
+									proxy_pass "http://localhost:11692/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /RazGatway/Admin/{
+									proxy_pass "http://localhost:11690/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /SynergyLeft/SynergyLeftWebApi/{
+									proxy_pass "http://localhost:11698/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /SynergyLeft/Admin/{
+									proxy_pass "http://localhost:11696/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /GatewayFluentTop/GatewayFluentTopWebApi/{
+									proxy_pass "http://localhost:11701/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /GatewayFluentTop/Admin/{
+									proxy_pass "http://localhost:11699/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /Gatewayleft/GatewayleftWebApi/{
+									proxy_pass "http://localhost:11704/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /Gatewayleft/Admin/{
+									proxy_pass "http://localhost:11702/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /ReviseLogproject/ReviseLogprojectWebApi/{
+									proxy_pass "http://localhost:11710/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /ReviseLogproject/Admin/{
+									proxy_pass "http://localhost:11708/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /OnlineBloodBankSystem/OnlineBloodBankSystemWebApi/{
+									proxy_pass "http://localhost:11716/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /OnlineBloodBankSystem/Admin/{
+									proxy_pass "http://localhost:11714/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /brtcheckgwtheme/brtcheckgwthemeWebApi/{
+									proxy_pass "http://localhost:11719/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /brtcheckgwtheme/Admin/{
+									proxy_pass "http://localhost:11717/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /defaulttest4/defaulttest4WebApi/{
+									proxy_pass "http://localhost:11734/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /defaulttest4/Admin/{
+									proxy_pass "http://localhost:11732/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /DashboardTesting/DashboardTestingWebApi/{
+									proxy_pass "http://localhost:11737/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /DashboardTesting/Admin/{
+									proxy_pass "http://localhost:11735/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /DoctorAppointmentBookingSystem/DoctorAppointmentBookingSystemWebApi/{
+									proxy_pass "http://localhost:11749/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /DoctorAppointmentBookingSystem/Admin/{
+									proxy_pass "http://localhost:11747/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /YogaEasy/YogaEasyWebApi/{
+									proxy_pass "http://localhost:11752/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /YogaEasy/Admin/{
+									proxy_pass "http://localhost:11750/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /SportsMarketplaceApp/SportsMarketplaceAppWebApi/{
+									proxy_pass "http://localhost:11755/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /SportsMarketplaceApp/Admin/{
+									proxy_pass "http://localhost:11753/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /Codeservertesting/CodeservertestingWebApi/{
+									proxy_pass "http://localhost:11758/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /Codeservertesting/Admin/{
+									proxy_pass "http://localhost:11756/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /SHTestApp/SHTestAppWebApi/{
+									proxy_pass "http://localhost:11776/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /SHTestApp/Admin/{
+									proxy_pass "https://localhost:11774/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /SHSingleStoreTest/SHSingleStoreTestWebApi/{
+									proxy_pass "http://localhost:11779/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /SHSingleStoreTest/Admin/{
+									proxy_pass "http://localhost:11777/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /AAAUuidTest/AAAUuidTestWebApi/{
+									proxy_pass "http://localhost:11824/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /AAAUuidTest/Admin/{
+									proxy_pass "https://localhost:11822/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /AAAMechALLTEST/AAAMechALLTESTWebApi/{
+									proxy_pass "http://localhost:11827/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /AAAMechALLTEST/Admin/{
+									proxy_pass "https://localhost:11825/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /uploadtest/uploadtestWebApi/{
+									proxy_pass "http://localhost:11830/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /uploadtest/Admin/{
+									proxy_pass "https://localhost:11828/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /uploadsTest/uploadsTestWebApi/{
+									proxy_pass "http://localhost:11833/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /uploadsTest/Admin/{
+									proxy_pass "http://localhost:11831/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /TestAAARoles/TestAAARolesWebApi/{
+									proxy_pass "http://localhost:11836/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /TestAAARoles/Admin/{
+									proxy_pass "http://localhost:11834/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /TestAAARolesClone/TestAAARolesCloneWebApi/{
+									proxy_pass "http://localhost:11839/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /TestAAARolesClone/Admin/{
+									proxy_pass "http://localhost:11837/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /B2BTestProj/B2BTestProjWebApi/{
+									proxy_pass "http://localhost:11842/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /B2BTestProj/Admin/{
+									proxy_pass "http://localhost:11840/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /UpStatus/UpStatusWebApi/{
+									proxy_pass "http://localhost:11845/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /UpStatus/Admin/{
+									proxy_pass "http://localhost:11843/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /EFORMMVCAPIMT/EFORMMVCAPIMTWebApi/{
+									proxy_pass "http://localhost:11851/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /EFORMMVCAPIMT/Admin/{
+									proxy_pass "http://localhost:11849/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /EFMVCAPIID/EFMVCAPIIDWebApi/{
+									proxy_pass "http://localhost:11854/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /EFMVCAPIID/Admin/{
+									proxy_pass "http://localhost:11852/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /DashboardMC/DashboardMCWebApi/{
+									proxy_pass "http://localhost:11863/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /DashboardMC/Admin/{
+									proxy_pass "http://localhost:11861/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /Synergyuiissues/SynergyuiissuesWebApi/{
+									proxy_pass "http://localhost:11881/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /Synergyuiissues/Admin/{
+									proxy_pass "http://localhost:11879/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /Gatewaytopmenuui/GatewaytopmenuuiWebApi/{
+									proxy_pass "http://localhost:11884/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /Gatewaytopmenuui/Admin/{
+									proxy_pass "http://localhost:11882/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /Synergytopui/SynergytopuiWebApi/{
+									proxy_pass "http://localhost:11887/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /Synergytopui/Admin/{
+									proxy_pass "http://localhost:11885/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /Newenterpricemakerchecker/NewenterpricemakercheckerWebApi/{
+									proxy_pass "http://localhost:11890/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /Newenterpricemakerchecker/Admin/{
+									proxy_pass "http://localhost:11888/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /SQLFeatureTest/SQLFeatureTestWebApi/{
+									proxy_pass "http://localhost:11905/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /SQLFeatureTest/Admin/{
+									proxy_pass "https://localhost:11903/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /Viewactionpagestest/ViewactionpagestestWebApi/{
+									proxy_pass "http://localhost:11911/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /Viewactionpagestest/Admin/{
+									proxy_pass "https://localhost:11909/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /Actionpage/ActionpageWebApi/{
+									proxy_pass "http://localhost:11914/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /Actionpage/Admin/{
+									proxy_pass "http://localhost:11912/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /SHListTest/SHListTestWebApi/{
+									proxy_pass "http://localhost:11917/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /SHListTest/Admin/{
+									proxy_pass "https://localhost:11915/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /sdytestmultiouath/sdytestmultiouathWebApi/{
+									proxy_pass "http://localhost:11920/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /sdytestmultiouath/Admin/{
+									proxy_pass "https://localhost:11918/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /testerappp/testerapppWebApi/{
+									proxy_pass "http://localhost:11926/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /testerappp/Admin/{
+									proxy_pass "https://localhost:11924/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /sdymultitest/sdymultitestWebApi/{
+									proxy_pass "http://localhost:11935/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /sdymultitest/Admin/{
+									proxy_pass "https://localhost:11933/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /SHAppTest/SHAppTestWebApi/{
+									proxy_pass "http://localhost:11938/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /SHAppTest/Admin/{
+									proxy_pass "https://localhost:11936/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /OpenItems/OpenItemsWebApi/{
+									proxy_pass "http://localhost:11956/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /OpenItems/Admin/{
+									proxy_pass "https://localhost:11954/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /localvmtest/localvmtestWebApi/{
+									proxy_pass "http://localhost:11959/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /localvmtest/Admin/{
+									proxy_pass "https://localhost:11957/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /sdyidentityTest/sdyidentityTestWebApi/{
+									proxy_pass "http://localhost:11971/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /sdyidentityTest/Admin/{
+									proxy_pass "https://localhost:11969/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /sdyallmultioauthTest/sdyallmultioauthTestWebApi/{
+									proxy_pass "http://localhost:11977/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /sdyallmultioauthTest/Admin/{
+									proxy_pass "https://localhost:11975/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /newlocalvmtest/newlocalvmtestWebApi/{
+									proxy_pass "http://localhost:11989/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /newlocalvmtest/Admin/{
+									proxy_pass "https://localhost:11987/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /AllControles/AllControlesWebApi/{
+									proxy_pass "http://localhost:12004/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /AllControles/Admin/{
+									proxy_pass "https://localhost:12002/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /sdycountavg/sdycountavgWebApi/{
+									proxy_pass "http://localhost:12007/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /sdycountavg/Admin/{
+									proxy_pass "https://localhost:12005/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /CustomEnvCheck/{
+									proxy_pass "http://localhost:12008/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /CustomENVCheckAPI/CustomENVCheckAPIWebApi/{
+									proxy_pass "http://localhost:12013/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /CustomEnvMvcTest/CustomEnvMvcTestWebApi/{
+									proxy_pass "http://localhost:12019/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /CustomEnvMvcTest/Admin/{
+									proxy_pass "https://localhost:12017/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /Console/ConsoleWebApi/{
+									proxy_pass "http://localhost:12025/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /Console/Admin/{
+									proxy_pass "https://localhost:12023/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /clonedViewaction/clonedViewactionWebApi/{
+									proxy_pass "http://localhost:12028/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /clonedViewaction/Admin/{
+									proxy_pass "https://localhost:12026/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /enterpriseopenissues/enterpriseopenissuesWebApi/{
+									proxy_pass "http://localhost:12037/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /enterpriseopenissues/Admin/{
+									proxy_pass "https://localhost:12035/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /Googleidfinal/GoogleidfinalWebApi/{
+									proxy_pass "http://localhost:12040/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /Googleidfinal/Admin/{
+									proxy_pass "https://localhost:12038/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /ShopLink/ShopLinkWebApi/{
+									proxy_pass "http://localhost:12046/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /ShopLink/Admin/{
+									proxy_pass "https://localhost:12044/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /MarketCraft/MarketCraftWebApi/{
+									proxy_pass "http://localhost:12061/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /MarketCraft/Admin/{
+									proxy_pass "https://localhost:12059/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /Azureidfinal/AzureidfinalWebApi/{
+									proxy_pass "http://localhost:12064/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /Azureidfinal/Admin/{
+									proxy_pass "https://localhost:12062/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /Identityserveridfinal/IdentityserveridfinalWebApi/{
+									proxy_pass "http://localhost:12067/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /Identityserveridfinal/Admin/{
+									proxy_pass "https://localhost:12065/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /ShopCoreEnterprise/ShopCoreEnterpriseWebApi/{
+									proxy_pass "http://localhost:12070/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /ShopCoreEnterprise/Admin/{
+									proxy_pass "https://localhost:12068/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /SHItemsTest/SHItemsTestWebApi/{
+									proxy_pass "http://localhost:12073/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /SHItemsTest/Admin/{
+									proxy_pass "https://localhost:12071/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /ConsumerAppTest/ConsumerAppTestWebApi/{
+									proxy_pass "http://localhost:12076/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /ConsumerAppTest/Admin/{
+									proxy_pass "https://localhost:12074/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /AWSTEST/AWSTESTWebApi/{
+									proxy_pass "http://localhost:12079/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /AWSTEST/Admin/{
+									proxy_pass "https://localhost:12077/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /UniqueGeneratedTest/UniqueGeneratedTestWebApi/{
+									proxy_pass "http://localhost:12088/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /UniqueGeneratedTest/Admin/{
+									proxy_pass "https://localhost:12086/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /AAAIdentityservertenent/AAAIdentityservertenentWebApi/{
+									proxy_pass "http://localhost:12100/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /AAAIdentityservertenent/Admin/{
+									proxy_pass "https://localhost:12098/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /SHAzureFinal/SHAzureFinalWebApi/{
+									proxy_pass "http://localhost:12103/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /SHAzureFinal/Admin/{
+									proxy_pass "https://localhost:12101/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /SHGoogleFinal/SHGoogleFinalWebApi/{
+									proxy_pass "http://localhost:12106/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /SHGoogleFinal/Admin/{
+									proxy_pass "https://localhost:12104/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /Sonarqube/SonarqubeWebApi/{
+									proxy_pass "http://localhost:12130/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /Sonarqube/Admin/{
+									proxy_pass "https://localhost:12128/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /MahatProjects/MahatProjectsWebApi/{
+									proxy_pass "http://localhost:12133/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+location /MahatProjects/Admin/{
+									proxy_pass "https://localhost:12131/";
+									proxy_http_version 1.1;
+									proxy_set_header Upgrade $http_upgrade;
+									proxy_set_header Connection keep-alive;
+									proxy_set_header Host $http_host;
+									proxy_cache_bypass $http_upgrade;
+									}
+
+
+					listen 443 ssl; # managed by Certbot
+ ssl_certificate /etc/letsencrypt/live/tdevstaging.craftmyapp.in/fullchain.pem; # managed by Certbot
+
+ ssl_certificate_key /etc/letsencrypt/live/tdevstaging.craftmyapp.in/privkey.pem; # managed by Certbot
+ include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+ ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+				}

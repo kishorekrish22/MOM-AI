@@ -1,0 +1,457 @@
+
+			<!-- This code generated from staging Powered by Mahat, Source Machine : stg , Build Number : #2024-07-004 (Updated on 07/07/2024 22:07) on 12/26/2024 10:27:26 -->
+			@using Microsoft.AspNetCore.Http
+			@inject IHttpContextAccessor HttpContextAccessor
+            @using Admin;
+			@model MahatProjects.Models.AlertTemplatesModel
+			@{
+			ViewData["Title"] = @Resource.updatealerttemplates;
+
+			Layout = "~/Views/Shared/_Layout.cshtml";
+			
+			}
+
+			@using(Html.BeginForm("Update_Alert_Templates", "AlertTemplates", FormMethod.Post, new { enctype="multipart/form-data", @id = "formId"}))
+			{
+
+			<div class="card card-block contCard"><!--Form_Main_Card-->
+				<div class="mobileHeader"><!--form_card_header-->
+					<div class="row">
+						<div class="col-sm-12 col-xs-12">
+							<h4 class="formHdr">@Resource.updatealerttemplates</h4>
+						</div>
+					</div>
+				</div><!--form_card_header-->
+				<!--form_error_display-->
+				@if(ViewData["message"] != null)
+				{
+				<div class="row">
+				<div class="col-sm-12 col-xs-12">
+				<div class="alert alert-danger alert-dismissible ">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">x</span>
+				</button>
+				Info :  @ViewData["message"]
+				</div>
+				</div>
+				</div>
+				}
+				
+				
+				 
+				
+				<!--form_error_display-->
+				<div class=""><!--form_inner_card-->
+					<div class="card-block"><!--form_inner_card_block-->
+					    @Html.HiddenFor(m => m.id)
+                            
+						 
+
+						
+						<div class="row"><!--field_container_row-->
+							<!--fieldsStartsHere-->
+						       		
+								<div class="col-sm-3 col-xs-12 p-2 entityname_craftmyapp_container">
+						<div>
+							<div class="form-group" > 
+								<label>@Resource.alerttemplates_entityname <b class="iconRed">*</b></label>
+                                @Html.TextBoxFor(m => m.entityname, new {@type="text",@maxlength="128", @class = "form-control form-control-lg mahat_transliterate required" })
+
+							     @Html.ValidationMessageFor(model => model.entityname)
+							</div>
+						</div>
+					</div>
+<div class="col-sm-3 col-xs-12 p-2 entityaction_craftmyapp_container">
+						<div>
+							<div class="form-group" > 
+								<label>@Resource.alerttemplates_entityaction</label>
+                                @Html.TextBoxFor(m => m.entityaction, new {@type="text",@maxlength="128", @class = "form-control form-control-lg mahat_transliterate " })
+
+							     @Html.ValidationMessageFor(model => model.entityaction)
+							</div>
+						</div>
+					</div>
+<div class="col-sm-3 col-xs-12 p-4 sendasbatch_craftmyapp_container">
+							<div>
+
+							<label>@Resource.alerttemplates_sendasbatch</label><br>
+							<div class="form-group">
+                                                        <div>
+                                                          <label class="switch">
+                                                          @Html.CheckBoxFor(m => m.sendasbatch,new {@class = "" })
+                                                           
+                                                          <span class="slider round"></span>
+                                                        </label>
+                                                        </div>
+                                                      </div>
+
+							</div>
+							</div>
+<div class="col-sm-3 col-xs-12 p-2 alerttype_craftmyapp_container">
+								<div>
+									<div class="form-group form-group--float-above my-3" > 
+										<label>@Resource.alerttemplates_alerttype</label>
+										<select name="alerttype" id="alerttype" class="form-control  "></select>
+
+									</div>
+									@Html.ValidationMessageFor(model => model.alerttype)
+									<label id="alerttype-error" class="help-block" style="display: none" for="alerttype"></label>
+								</div>
+							</div>
+<div class="col-sm-3 col-xs-12 p-2 alertsubject_craftmyapp_container">
+						<div>
+							<div class="form-group" > 
+								<label>@Resource.alerttemplates_alertsubject</label>
+                                @Html.TextBoxFor(m => m.alertsubject, new {@type="text",@maxlength="256", @class = "form-control form-control-lg mahat_transliterate " })
+
+							     @Html.ValidationMessageFor(model => model.alertsubject)
+							</div>
+						</div>
+					</div>
+<div class="col-sm-3 col-xs-12 p-2 alertcopyto_craftmyapp_container">
+						<div>
+							<div class="form-group" > 
+								<label>@Resource.alerttemplates_alertcopyto</label>
+                                @Html.TextBoxFor(m => m.alertcopyto, new {@type="email",@maxlength="50", @class = "form-control form-control-lg " })
+
+							     @Html.ValidationMessageFor(model => model.alertcopyto)
+							</div>
+						</div>
+					</div>
+<div class="col-sm-3 col-xs-12 p-2 alertcarboncopyto_craftmyapp_container">
+						<div>
+							<div class="form-group" > 
+								<label>@Resource.alerttemplates_alertcarboncopyto</label>
+                                @Html.TextBoxFor(m => m.alertcarboncopyto, new {@type="email",@maxlength="50", @class = "form-control form-control-lg " })
+
+							     @Html.ValidationMessageFor(model => model.alertcarboncopyto)
+							</div>
+						</div>
+					</div>
+<div class="col-sm-12 col-xs-12 p-2 alertcontent_craftmyapp_container">
+								<div>
+									<div class="form-group form-group--float-above my-3" > 
+										<label>@Resource.alerttemplates_alertcontent</label>
+															@Html.TextAreaFor(m => m.alertcontent, new {@class = "form-control mahat_transliterate wysiwyg-editor " })
+
+										<i class="form-group__bar" ></i>
+									</div>
+									@Html.ValidationMessageFor(model => model.alertcontent)
+									<label id="alertcontent-error" class="help-block" style="display: none" for="alertcontent"></label>
+								</div>
+							</div>
+
+
+							<!--fieldsEndsHere-->	
+						</div><!--field_container_row-->
+
+
+						<div class="card-block"><!--form_button_card_block-->
+							<button type="button" onclick="window.history.back()"  class="btn btn-secondary cma_cancel_button waves-effect">@Resource.back</button>
+							<button type="button" id="btnSubmit" class="btn cma_primary_button  cma_save_button waves-effect pull-right">@Resource.updatealerttemplates</button>
+						</div><!--form_button_card_block-->
+
+
+					</div><!--form_inner_card_block-->
+				</div><!--form_inner_card-->
+			</div><!--Form_Main_Card-->
+
+			}<!--EndFORM-->
+
+
+			
+			 <!--from_cma_script-->
+			 <script type="text/javascript">
+				$(document).ready(function () {
+
+
+				var Actions=getAutho("AlertTemplates","edit")
+				if(Actions == undefined){
+				window.location = "@Url.Action("RoleAuthorizationFailed", "users")"
+				}
+
+
+				});
+				</script>
+			
+			<script>
+var stralerttype;
+</script>
+@if (Model != null)
+{
+if(Model.alerttype != null && Model.alerttype.ToString() != "")
+{
+<script>
+stralerttype="@Model.alerttype"
+</script>
+}
+}
+<link href="~/components/trumbowyg/dist/ui/trumbowyg.css" rel="stylesheet" />
+<script src="~/components/trumbowyg/dist/trumbowyg.js"></script>
+<script>$('#alertcontent').trumbowyg();</script>
+
+			<script>
+$(document).ready(function () {
+
+$.ajax({
+url: '@Url.Action("get_lookups_by_entity","lookups")',
+dataType: 'json',
+data:{id: 'AlertTemplates' },
+success: function(data) {
+
+
+
+		$.each(data, function(index, optionDataInner) {
+
+				
+											if(optionDataInner.fieldname=="alerttype"){
+												var ddltarget_alerttype = "#alerttype"
+												$(ddltarget_alerttype).empty();
+												$(ddltarget_alerttype).append("<option value=''>Choose</option>")
+												var options_alerttype = optionDataInner.fielddesc.split(',');
+                                                options_alerttype.sort(function (a, b) {
+                                                                        return a.localeCompare(b);
+                                                    });
+												options_alerttype.forEach(function(option_alerttype){
+													if(stralerttype== option_alerttype)
+													$(ddltarget_alerttype).append('<option selected value="' + option_alerttype + '">' + option_alerttype+ '</option>')
+													else
+													$(ddltarget_alerttype).append('<option  value="' + option_alerttype + '">' + option_alerttype+ '</option>')
+												
+												})  
+ 
+											}
+
+
+
+		});
+
+
+},
+error: function(jqXHR, textStatus, errorThrown) {
+if (JSON.stringify(jqXHR.responseText) == "\"API Authorization failed\"")
+{
+swal({
+title: 'Failed!',
+text: jqXHR.responseText,
+type: 'error',
+buttonsStyling: false,
+confirmButtonClass: 'btn btn-primary',
+allowOutsideClick: false
+}).then(function() {
+window.location = "@Url.Action("AuthorizationFailed", "users")"
+}) 
+}
+else
+{
+swal({
+title: 'Contact Administrator !',
+text: jqXHR.responseText,
+type: 'error',
+buttonsStyling: false,
+confirmButtonClass: 'btn btn-primary'
+}) 
+}
+}
+})
+})
+</script>
+			
+			
+			
+			<script>
+            
+			
+			
+			</script>
+			
+  
+ 
+                            <script>
+                            var posturl='';
+                            </script>
+
+                             @if (Model == null)
+                             {
+	                             <script>
+                                posturl = '@Url.Action("Create_Alert_Templates")';
+	                            </script>
+                            }else{
+	   
+	                                <script>
+                                                   posturl = '@Url.Action("Update_Alert_Templates")';
+			 
+						                                  </script>    			              
+                              
+	 
+							                            ViewData["Title"] = @Resource.updatealerttemplates;
+						                                 <script>
+                   
+					                                 $("#btnSubmit").html("@Resource.updatealerttemplates")
+						                                  </script>    
+ 
+ 
+                            }
+
+<script>
+$(document).ready(function () {
+	
+	
+           
+                $.validator.addMethod("invalidphone", function (value, element) {
+                if (value == 'invalid') {
+                return false;
+                }
+                return true;
+                }, "Please enter valid value");
+
+                                        $('#formId').validate({
+                                        ignore: ":hidden:not(.invalidphone)",
+                                        highlight: function(element) {
+                                        $(element).closest('.form-group').addClass('has-error');
+                                        $(element).closest('.form-group').removeClass('has-success');
+                                        $(element).addClass('form-control-error');
+                                        $(element).removeClass('form-control-success');
+                                        },
+                                        unhighlight: function(element) {
+                                        $(element).closest('.form-group').removeClass('has-error');
+                                        $(element).closest('.form-group').addClass('has-success');
+                                        $(element).addClass('form-control-success');
+                                        $(element).removeClass('form-control-error');
+                                        },
+                                        errorElement: 'span',
+                                        errorClass: 'help-block',
+                                        errorPlacement: function (error, element) {
+                                                    if (element.hasClass("invalidphone")) {
+                                                        error.addClass("invalidphoneerror");
+                                                        error.insertAfter(element);
+                                                    } else {
+                                                        error.insertAfter(element);
+                                                    }
+                                                }
+                                        });
+ 	 
+var validator = $("#formId").validate({ /* settings */ });
+ 
+$("#btnSubmit").click(function(){
+ 
+ 
+ 
+
+ 
+ 
+
+if ($("#formId").valid()){
+ $(".page-loader").show()
+ 
+ var form = $('#formId')[0];
+ var formdata = new FormData(form);
+
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+$.ajax({
+url: posturl,
+type:'POST',
+enctype: 'multipart/form-data',
+processData: false,   
+contentType: false,
+cache: false,
+data: formdata,
+success: function(data) {
+  
+  $(".page-loader").hide();
+ if(data=="Success"){
+ $(".page-loader").hide();
+
+ 	var Actions_=getAutho("AlertTemplates","list")
+	if(Actions_ !=  undefined)
+	{
+		var list_URL = "@Url.Action("entry.viewname", "AlertTemplates")"
+		                                                                list_URL = list_URL.replace("entry.viewname", Actions_.actionmethodname);
+		                                                                window.location=list_URL;
+	 
+	}
+   
+ }
+    else {
+                                $(".page-loader").hide();
+                                swal({
+                                    title: "Error !!",
+                                    text: data,
+
+                                    type: "error",
+                                    showCancelButton: false,
+                                    confirmButtonText: "OK",
+                                })
+
+
+                            }
+
+ 
+},
+	error: function(jqXHR, textStatus, errorThrown) {
+	if (JSON.stringify(jqXHR.responseText) == "\"API Authorization failed\"")
+	{
+	swal({
+	title: 'Failed!',
+	text: jqXHR.responseText,
+	type: 'error',
+	buttonsStyling: false,
+	confirmButtonClass: 'btn btn-primary',
+	allowOutsideClick: false
+	}).then(function() {
+	window.location = "@Url.Action("AuthorizationFailed", "users")"
+	}) 
+	}
+	else
+	{
+	swal({
+	title: 'Contact Administrator !',
+	text: jqXHR.responseText,
+	type: 'error',
+	buttonsStyling: false,
+	confirmButtonClass: 'btn btn-primary'
+	}) 
+	}
+	}
+})
+
+
+
+
+}else{
+validator.focusInvalid();
+swal({
+title: 'Validation Failed !',
+text: "Please check your entry",
+type: 'error',
+buttonsStyling: false,
+confirmButtonClass: 'btn btn-primary'
+ })
+}
+})
+})
+
+
+</script>
+
+			
+			
+            
+            
+
+			 
+             
+                
+			 <!--to_cma_script-->
+			
+
+
+
+
