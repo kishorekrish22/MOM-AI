@@ -1,0 +1,7 @@
+faster-whisper>=1.0.3        # open-source Whisper (CTranslate2) for speech-to-text
+PyAudioWPatch>=0.2.12.14; sys_platform == "win32"   # mic + WASAPI loopback (system audio)
+pystray>=0.19.5              # system-tray icon
+Pillow>=10.0
+numpy>=1.26
+python-docx>=1.1
+requests>=2.31
