@@ -5,8 +5,8 @@ A Windows system-tray app. Click the **mic icon** to start recording your microp
 document. When you stop, the transcript is sent to your cloud-VM LLM and a Minutes of the Meeting `.docx` is
 produced from your organisation's MOM template (`templates/MOM_Template.docx`).
 
-## Install & run (Windows 10/11, Python 3.10+)
-1. Double-click `run.bat` (first run: `install.bat` creates a venv and installs packages; Python 3.11/3.12 recommended). If the icon does not appear, run `run_debug.bat` to see the error.
+## Install & run (Windows 10/11, Python 3.10-3.13)
+1. Double-click `run.bat` (first run: `install.bat` creates a venv and installs packages; Python 3.12 recommended; 3.14+ is NOT supported yet). If the icon does not appear, run `run_debug.bat` to see the error.
    The first start downloads the Whisper `small` model (~460 MB).
 2. Look for the mic icon in the taskbar tray (click `^` and drag it out to pin it).
 3. **Left-click** the icon (or right-click -> *Start recording*) to start; the icon turns **red**.
