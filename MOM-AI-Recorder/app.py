@@ -133,11 +133,20 @@ class App:
 
 def main():
     cfg_root = load_config()["_root"]
+    handlers = [logging.FileHandler(cfg_root / "app.log", encoding="utf-8")]
+    if sys.stderr is not None:  # None under pythonw
+        handlers.append(logging.StreamHandler())
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s",
-                        handlers=[logging.FileHandler(cfg_root / "app.log", encoding="utf-8"),
-                                  logging.StreamHandler()])
+                        handlers=handlers)
     App().run()
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except BaseException:
+        import traceback
+        with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "crash.log"), "a",
+                  encoding="utf-8") as f:
+            f.write(f"--- {datetime.now()} ---\n{traceback.format_exc()}\n")
+        raise
