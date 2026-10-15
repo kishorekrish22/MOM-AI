@@ -5,7 +5,7 @@ import sys
 from pathlib import Path
 
 DEFAULTS = {
-    "ollama_url": "http://35.200.209.120:11434/api/generate",
+    "ollama_url": "http://35.200.191.44:11434/api/generate",
     "llm_model": "",
     "llm_timeout_s": 900,
     "whisper_model": "small",
