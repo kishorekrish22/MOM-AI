@@ -78,16 +78,21 @@ class OllamaClient:
     def _pick_model(self):
         if self.model:
             return self.model
+        tags = self.url.rsplit("/api/", 1)[0] + "/api/tags"
         try:
-            tags = self.url.rsplit("/api/", 1)[0] + "/api/tags"
-            models = requests.get(tags, timeout=15).json().get("models", [])
-            if models:
-                self.model = models[0]["name"]
-                log.info("Using LLM model: %s", self.model)
-                return self.model
+            r = requests.get(tags, timeout=20)
+            r.raise_for_status()
+            models = r.json().get("models", [])
         except Exception as e:
-            log.warning("Could not list models: %s", e)
-        raise LLMError('Set "llm_model" in config.json (could not auto-detect a model on the VM).')
+            raise LLMError(f"Cannot reach the AI server at {tags} ({e}). Check the VM is running, the "
+                           f"firewall allows port 11434 from this PC, or open that URL in a browser. "
+                           f"You can also set \"llm_model\" in config.json.") from e
+        if not models:
+            raise LLMError("The AI server answered but lists no models. Set \"llm_model\" in config.json "
+                           "(run `ollama list` on the VM to see the names).")
+        self.model = models[0]["name"]
+        log.info("Using LLM model: %s", self.model)
+        return self.model
 
     def generate(self, prompt: str, as_json=False) -> str:
         body = {"model": self._pick_model(), "prompt": prompt, "stream": False,

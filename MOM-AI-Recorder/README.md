@@ -45,3 +45,7 @@ owner / due by), and participants/mode **only if said in the meeting**; otherwis
 - Transcripts are sent to the VM over plain HTTP. If that port is open to the internet, restrict it to your
   office IP or put it behind a VPN/TLS, as meeting content is confidential.
 - Please tell attendees the meeting is being recorded/transcribed, per your company policy.
+
+## Troubleshooting the AI step
+- `check_llm.bat` tests the connection to the VM and lists its models.
+- `regenerate_mom.bat` builds a MOM from the newest saved transcript, so a failed AI step never loses a meeting.
